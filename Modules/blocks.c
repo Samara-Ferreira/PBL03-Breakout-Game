@@ -1,3 +1,7 @@
+#include "constants.h"
+#include "blocks.c"
+#include "ball.c"
+
 typedef struct {
     int coordX;         /* x do canto superior esquerdo */ 
     int coordY;         /* y do canto superior esquerdo */
@@ -38,15 +42,21 @@ int *y_point) {
 
 
 /* Função para remover os blocos */
-void removeBlocks(Block blocksList[], int index, int *score) {
-    if (blocksList[index].life == 1) {
-        blocksList[index].flagVisible = 0;
+void removeBlocks(Block blocksList[], int *score,  Ball *ball) {
 
-        /* Pontuação do jogo */
-        (*score) += blocksList[index].points;
+    for (int i = 0; i < QUANTITY_BLOCKS; i++) {
+
+        if ((detect_collision(blocksList[i].coordX, blocksList[i].coordY, BLOCK_LENGTH, BLOCK_WIDHT, ball->ballPositionX, ball->ballPositionY, 
+        COLLISION_RADIUS, &x_point, &y_point) == 1) && (blocksList[i].flagVisible == 1)) {
+            if (blocksList[i].life == 1) {
+                blocksList[i].flagVisible = 0;
+
+                /* Pontuação do jogo */
+                (*score) += blocksList[i].points;
+            }
+            else if (blocksList[i].life != -1)
+                blocksList[i].life--;
+        }
     }
-
-    else if (blocksList[index].life != -1)
-        blocksList[index].life--;
 }
 

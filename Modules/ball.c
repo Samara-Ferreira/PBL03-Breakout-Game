@@ -11,7 +11,7 @@ typedef struct {
 
 
 /* Buscar o tipo de colisão */
-int getTypeCollision(Ball *ball, Block blocksList[], Bar *bar, int *score) {
+int getTypeCollision(Ball *ball, Block blocksList[], Bar *bar) {
     int x_point, y_point;
 
     /* Paredes: colisão na parte superior à esquerda */
@@ -41,9 +41,6 @@ int getTypeCollision(Ball *ball, Block blocksList[], Bar *bar, int *score) {
         if ((detect_collision(blocksList[i].coordX, blocksList[i].coordY, BLOCK_LENGTH, BLOCK_WIDHT, ball->ballPositionX, ball->ballPositionY, 
         COLLISION_RADIUS, &x_point, &y_point) == 1) && (blocksList[i].flagVisible == 1)) {
 
-            /* Remoção do bloco, deixando-o invisível */
-            removeBlocks(blocksList, i, score);
-
             /* Colisão na parte superior */
             if (y_point == blocksList[i].coordY && (x_point >= blocksList[i].coordX && x_point <= (blocksList[i].coordX + BLOCK_LENGTH)))
                 return 3;
@@ -67,7 +64,7 @@ int getTypeCollision(Ball *ball, Block blocksList[], Bar *bar, int *score) {
 
 
 /* Função para mover a bola e evitar colisões */
-int getMoveBall(Ball *ball, Block blocksList[], Bar *bar, int *score) {
+int getMoveBall(Ball *ball, Block blocksList[], Bar *bar) {
     Ball auxBall = *ball;
 
     int pontosIntermediarios = 20;
@@ -82,7 +79,7 @@ int getMoveBall(Ball *ball, Block blocksList[], Bar *bar, int *score) {
         auxBall.ballPositionY += round(auxBall.ballSpeedY * tempo);
 
         /* Verifica se houve colisão */
-        int typeCollision = getTypeCollision(&auxBall, blocksList, bar, score);
+        int typeCollision = getTypeCollision(&auxBall, blocksList, bar);
 
         if (typeCollision != -1) {
             ball = &auxBall;
@@ -98,9 +95,9 @@ int getMoveBall(Ball *ball, Block blocksList[], Bar *bar, int *score) {
 
 
 /* Verificação dos possíveis casos de colisão */
-void moveBall(Ball *ball, Block blocksList[], Bar *bar, int *score) {
+void moveBall(Ball *ball, Block blocksList[], Bar *bar) {
 
-    switch (getTypeCollision(ball, blocksList, bar, score)) {
+    switch (getTypeCollision(ball, blocksList, bar)) {
     
     case (1):
         ball->ballSpeedX = -ball->ballSpeedX;

@@ -17,7 +17,7 @@ int checkWin(Block blocksList[]) {
 }
 
 int checkLose(Ball *ball) {
-    if (ball->ballPositionY < (SCREEN_Y - 20))
+    if (ball->ballPositionY > (SCREEN_Y - 20 + BAR_WIDHT))
         return 0;
     else 
         return 1;
@@ -64,7 +64,9 @@ int main() {
         moveBar(&bar, velX);
 
         /* Movimentar a bola */
-        moveBall(&ball, blocksList, &bar, &score);        
+        moveBall(&ball, blocksList, &bar);     
+
+        removeBlocks(blocksList, &score, &ball);
     }
 
 
