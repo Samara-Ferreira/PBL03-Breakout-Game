@@ -97,7 +97,7 @@ int getMoveBall(Ball *ball, Block blocksList[], Bar *bar) {
 /* Verificação dos possíveis casos de colisão */
 void moveBall(Ball *ball, Block blocksList[], Bar *bar) {
 
-    switch (getTypeCollision(ball, blocksList, bar)) {
+    switch (getMoveBall(ball, blocksList, bar)) {
     
     case (1):
         ball->ballSpeedX = -ball->ballSpeedX;
