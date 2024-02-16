@@ -21,6 +21,14 @@ void alfanumerico (int coordX, int coordY, char caracter, short cor){
 	switch (caracter)
 	{
 
+	case'^':
+
+		video_box(coordX    , coordY    , coordX + 1, coordY + 9, cor);
+		video_box(coordX + 2, coordY + 1, coordX + 3, coordY + 8, cor);
+		video_box(coordX + 4, coordY + 2, coordX + 5, coordY + 7, cor);
+		video_box(coordX + 6, coordY + 3, coordX + 7, coordY + 6, cor);
+		video_box(coordX + 8, coordY + 4, coordX + 9, coordY + 5, cor);
+
 	case '<':
 
 		video_box(coordX + 2, coordY + 4, coordX + 3, coordY + 5, cor);
@@ -134,7 +142,7 @@ void alfanumerico (int coordX, int coordY, char caracter, short cor){
 
 		break;
 
-	case '8';
+	case '8':
 
 		video_box(coordX + 2, coordY    , coordX + 7, coordY + 1, cor);
 		video_box(coordX    , coordY + 2, coordX + 1, coordY + 3, cor);
@@ -390,7 +398,7 @@ break;
     for (int i = 0; i < tamanhoLista; ++i) {
         int X = coordX + i * 13;
         alfanumerico(X, coordY, lista[i], cor);
-    }
+    	}
 	}
 }
 
