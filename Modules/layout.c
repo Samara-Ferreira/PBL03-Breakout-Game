@@ -31,7 +31,7 @@ void phrase(int coordX, int coordY, char *list, int lenList, short cor) {
     }
 }
 
-void write_score(int score) {
+void write_score( int coordX, int coordY, int score) {
 
     char number_str[10];
 
@@ -42,7 +42,7 @@ void write_score(int score) {
 
     for (i = 0; i < len; i++) {
 
-        alphanumeric(78 + (13 * i), 0, number_str[i], 0xFFE0);
+        alphanumeric(coordX + (13 * i), coordY, number_str[i], 0xFFE0);
     }
 }
 
@@ -52,7 +52,8 @@ void screen_defeat (int score) {
     char score_message[6] = "score:";
 
     phrase(100, 110, defeat_message, 9, 0xf800);
-    phrase(130, 145, score_message, 6, 0xffe0);
+    phrase(105, 145, score_message, 6, 0xffe0);
+    write_score(183,  145, score);
 
 }
 
@@ -76,7 +77,7 @@ void game_field(Block blocksList[], int score, int state_game) {
     char text_score[6] = "score:";
 
     phrase(0, 0, text_score, 6, 0xFFE0);
-    write_score(score);
+    write_score(78, 0, score);
 
     if (state_game == 1) {
 
