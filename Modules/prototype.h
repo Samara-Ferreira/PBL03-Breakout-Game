@@ -44,25 +44,32 @@ typedef struct {
     int coordY;
 } Bar;
 
-void alfanumerico    (int coordX, int coordY, char caracter, short cor);
-void phrase          (int coordX, int coordY, char *list, int lenList, short cor);
-void screen_defeat   (int score);
-void screen_victory  ();
-void create_menu     (); 
-void game_field(Block blocksList[], int score, int state_game);
+// Layout geral
+void phrase           (int coordX, int coordY, char *list, int lenList, short cor);
+void write_score      (int score);
+void screen_defeat    (int score);
+void screen_victory   ();
+void create_menu      ();
+void game_field       (Block blocksList[], int score, int state_game);
+void title            (coordX, coordY);
+void alphanumeric     (int coordX, int coordY, char caracter, short cor);
 
-void makeBlocks      (Block blocksList[]);
-void removeBlocks    (Block blocksList[], int *score,  Ball *ball);
+// Blocos
+void makeBlocks       (Block blocksList[]);
+void removeBlocks     (Block blocksList[], int *score,  Ball *ball);
  
-void bola9x9         (int coordX, int coordY, short cor);
-int detect_collision (int x_rect, int y_rect, int length_rect, int width_rect,  
+// Bola
+void bola9x9          (int coordX, int coordY, short cor);
+int  detect_collision (int x_rect, int y_rect, int length_rect, int width_rect,  
                       int x_boll, int y_boll, int ray, int *x_point, int *y_point);
-int getTypeCollision (Ball *ball, Block blocksList[], Bar *bar);
-int getMoveBall      (Ball *ball, Block blocksList[], Bar *bar);
-void moveBall        (Ball *ball, Block blocksList[], Bar *bar);
+int  getTypeCollision (Ball *ball, Block blocksList[], Bar *bar);
+int  getMoveBall      (Ball *ball, Block blocksList[], Bar *bar);
+void moveBall         (Ball *ball, Block blocksList[], Bar *bar);
 
-void moveBar         (Bar *bar, int accelX);
+// Barra
+void moveBar          (Bar *bar, int accelX);
 
-void change_state    (int *pointer_state, int *pointer_buttons);
+// Botões
+void change_state     (int *pointer_state, int *pointer_buttons);
 
 #endif // PROTOTYPE_H_INCLUDED
