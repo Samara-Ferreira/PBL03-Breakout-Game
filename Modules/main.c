@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <constants.h>
-//#include <intelfpgaup/accel.h>
-#include <blocks.c>
-#include <ball.c>
-#include <bar.c>
+#include "prototype.h"
 
 
 int checkWin(Block blocksList[]) {
@@ -17,34 +11,42 @@ int checkWin(Block blocksList[]) {
 }
 
 int checkLose(Ball *ball) {
-    if (ball->ballPositionY > (SCREEN_Y - 20 + BAR_WIDHT))
+    if (ball->ballPositionY > (SCREEN_Y - 25))
         return 0;
     else 
         return 1;
 }
 
+void reset_data (Ball *ball, Bar *bar, int *score) {
+
+    ball->ballPositionX = SCREEN_X / 2;
+    ball->ballPositionY = SCREEN_Y - 120;
+    ball->ballSpeedX = 1;
+    ball->ballSpeedY = 2;
+    ball->collision = -1;
+    
+    bar->coordX = SCREEN_X / 2;
+    bar->coordY = SCREEN_Y - 20;
+
+    *score = 0;
+
+}
 
 int main() {
 
-    /* Inicializar os elementos do jogo */
-
+     /* Inicializar os elementos do jogo */
+ 
+    int score;
     Block blocksList[QUANTITY_BLOCKS];
-    /* em andamento... */
-
     Ball ball;
-    ball.ballPositionX = SCREEN_X / 2;
-    ball.ballPositionY = SCREEN_Y - 60;
-    ball.ballSpeedX = 2;
-    ball.ballSpeedY = 5;
-    
     Bar bar;
-    bar.coordX = SCREEN_X / 2;
-    bar.coordY = SCREEN_Y - 20;
+    
+    reset_data (&ball, &bar, &score);
 
-    int score = 0;
+    int state_game, buttons;
 
+    KEY_open();
 
-    /* Inicializações */
 
     int ready, tap, dtap, velX, velY, velZ, mg_per_lsb;
 
@@ -54,21 +56,104 @@ int main() {
 
     accel_calibrate();
 
+    video_open();
+    
+    makeBlocks (blocksList);
+  
+    
+    while (1) {
+    
+    	state_game = 0;
+    	reset_data (&ball, &bar, &score);
+	    makeBlocks (blocksList);
+    	
+        /* Loop principal do jogo */
+        while (checkWin(blocksList) && checkLose(&ball)) {
+        
+            KEY_read(&buttons);
+            change_state(&state_game, &buttons);
+            
+            video_clear();
+            video_erase();
+            
+            if (state_game == 0) {
+                
+                reset_data (&ball, &bar, &score);
+                makeBlocks (blocksList);
+                create_menu();
+                video_show();
+            
+            } else if (state_game == 1) {
+            
+                game_field (blocksList, score, state_game);
+                
+                bola9x9 (ball.ballPositionX, ball.ballPositionY, 0xFfe0);
+                video_box( bar.coordX - BAR_SIZE, bar.coordY - BAR_WIDHT, bar.coordX + BAR_SIZE,bar.coordY + BAR_WIDHT , 0xFC18);
+            
+                video_show();
 
-    /* Loop principal do jogo */
-    while (checkWin(blocksList) && checkLose(&ball)) {
+                accel_read(&ready, &tap, &dtap, &velX, &velY, &velZ, &mg_per_lsb);
 
-        accel_read(&ready, &tap, &dtap, &velX, &velY, &velZ, &mg_per_lsb);
+                /* Movimentar a barra */
+                moveBar(&bar, velX); 
 
-        /* Movimentar a barra */
-        moveBar(&bar, velX);
+                /* Movimentar a bola */
+                moveBall(&ball, blocksList, &bar);
+             
 
-        /* Movimentar a bola */
-        moveBall(&ball, blocksList, &bar);     
+                removeBlocks(blocksList, &score, &ball);
+            
+            } else if (state_game == 2) {
 
-        removeBlocks(blocksList, &score, &ball);
+                game_field (blocksList, score, state_game);
+                bola9x9 (ball.ballPositionX, ball.ballPositionY, 0xFC18);
+                video_box( bar.coordX - BAR_SIZE, bar.coordY - BAR_WIDHT, bar.coordX + BAR_SIZE,bar.coordY + BAR_WIDHT , 0xFC18);
+                video_show();
+            
+            } else if (state_game == 3) {
+
+                game_field (blocksList, score, state_game);
+                bola9x9 (ball.ballPositionX, ball.ballPositionY, 0xFC18);
+                video_box( bar.coordX - BAR_SIZE, bar.coordY - BAR_WIDHT, bar.coordX + BAR_SIZE,bar.coordY + BAR_WIDHT , 0xFC18);
+                video_show();
+            }
+            
+        }
+
+        if (checkLose(&ball) == 0) {
+
+            do {
+
+                KEY_read(&buttons);
+
+                video_clear();
+                video_erase();
+                screen_defeat(score);
+                video_show();
+
+            } while (buttons != 1);
+
+        }
+
+        else {
+
+            do {
+
+                KEY_read(&buttons);
+
+                video_clear();
+                video_erase();
+                screen_victory();
+                video_show();
+
+            } while (buttons != 1);
+
+        }
+    
     }
+    
 
-
+   
     return 0;
 }
+
