@@ -1,14 +1,7 @@
-//#include <intelfpgaup/accel.h>
-#include <constants.h>
+#include "prototype.h"
 
-typedef struct {
-    int coordX;
-    int coordY; 
-} Bar;
-
-/* Função para movimentar a barra */
 void moveBar(Bar *bar, int accelX) {
-    if ((WALL_WIDHT_X < (bar->coordX - BAR_SIZE) + accelX) && ((bar->coordX + BAR_SIZE) + accelX < SCREEN_X - WALL_WIDHT_X))
+    if ((WALL_WIDHT_X < (bar->coordX - BAR_SIZE) + accelX) && ((bar->coordX + BAR_SIZE) + accelX < SCREEN_X - WALL_WIDHT_X ))
         bar->coordX += accelX;
     else {
         if (SCREEN_X / 2 >= bar->coordX) 
@@ -17,4 +10,3 @@ void moveBar(Bar *bar, int accelX) {
             bar->coordX += -(bar->coordX + BAR_SIZE) + SCREEN_X - WALL_WIDHT_X;
     }
 }
-
