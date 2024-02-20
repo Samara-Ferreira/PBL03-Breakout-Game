@@ -152,7 +152,7 @@ void title (coordX, coordY) {
 
     video_box(coordX +  4, coordY +  8, coordX + 21, coordY + 13, cor1);
     video_box(coordX + 22, coordY +  8, coordX + 23, coordY + 13, cor2);
-    video_box(coordX     , coordY + 14, coordX +  9, coordY + 37, cor1);
+    video_box(coordX     , coordY + 14, coordX +  9, coordY + 27, cor1);
     video_box(coordX + 10, coordY + 14, coordX + 11, coordY + 17, cor2);
     video_box(coordX + 10, coordY + 24, coordX + 11, coordY + 27, cor2);
     video_box(coordX + 10, coordY + 18, coordX + 25, coordY + 23, cor1);
@@ -188,7 +188,7 @@ void title (coordX, coordY) {
     video_box(coordX + 26, coordY +  6, coordX + 27, coordY + 11, cor2);
     video_box(coordX + 14, coordY + 12, coordX + 21, coordY + 17, cor1);
     video_box(coordX + 22, coordY + 12, coordX + 23, coordY + 17, cor2);
-    video_box(coordX + 14, coordY + 22, coordX + 21, coordY + 17, cor1);
+    video_box(coordX + 14, coordY + 22, coordX + 21, coordY + 27, cor1);
     video_box(coordX + 22, coordY + 22, coordX + 23, coordY + 27, cor2);
     video_box(coordX + 18, coordY + 28, coordX + 25, coordY + 33, cor1);
     video_box(coordX + 26, coordY + 28, coordX + 27, coordY + 33, cor2);
