@@ -128,7 +128,7 @@ void title (coordX, coordY) {
     video_box(coordX + 10, coordY + 28, coordX + 23, coordY + 33, cor1);
     video_box(coordX + 20, coordY +  6, coordX + 27, coordY + 13, cor1);
     video_box(coordX + 20, coordY + 20, coordX + 27, coordY + 27, cor1);
-    video_box(coordX + 24, coordY     , coordX + 25, coordY +  5, cor1);
+    video_box(coordX + 24, coordY     , coordX + 25, coordY +  5, cor2);
     video_box(coordX + 28, coordY +  6, coordX + 29, coordY + 13, cor2);
     video_box(coordX + 24, coordY + 14, coordX + 25, coordY + 19, cor2);
     video_box(coordX + 28, coordY + 20, coordX + 29, coordY + 27, cor2);
