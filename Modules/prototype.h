@@ -46,12 +46,12 @@ typedef struct {
 
 // Layout geral
 void phrase           (int coordX, int coordY, char *list, int lenList, short cor);
-void write_score      (int score);
+void write_score      (int coordX, int coordY, int score);
 void screen_defeat    (int score);
 void screen_victory   ();
 void create_menu      ();
 void game_field       (Block blocksList[], int score, int state_game);
-void title            (coordX, coordY);
+void title            (int coordX, int coordY);
 void alphanumeric     (int coordX, int coordY, char caracter, short cor);
 
 // Blocos

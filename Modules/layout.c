@@ -113,7 +113,7 @@ void game_field(Block blocksList[], int score, int state_game) {
     }
 }
 
-void title (coordX, coordY) {
+void title ( int coordX, int coordY) {
 
     short cor1 = 0x3f9e; //ciano
     short cor2 = 0xf81f; //magenta
