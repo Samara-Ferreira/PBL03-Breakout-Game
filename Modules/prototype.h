@@ -10,50 +10,22 @@
 #include <string.h>
 #include <math.h>
 
-#define SCREEN_X                320
-#define SCREEN_Y                240
-#define WALL_WIDHT_X            3
-#define WALL_WIDHT_Y            15
-#define RADIUS                  4
-#define COLLISION_RADIUS        5
-#define BAR_SIZE                30
-#define BAR_WIDHT               1
-#define QUANTITY_BLOCKS         48  // valor original: 48
-#define BLOCK_LENGTH            37 
-#define BLOCK_WIDHT             12
+#include "structs.h"
+#include "constants.h"
 
-typedef struct {
-    int coordX;         /* x do canto superior esquerdo */ 
-    int coordY;         /* y do canto superior esquerdo */
-    int flagVisible;    /* flag para saber se o bloco esta visivel */
-    int life;           /* vida do bloco */ 
-    int points;         /* pontos do bloco */
-	int color;
-} Block;
-
-typedef struct {
-    int ballPositionX;
-    int ballPositionY;
-    int ballSpeedX;
-    int ballSpeedY;
-    int collision;
-} Ball;
-
-typedef struct {
-    int coordX;
-    int coordY;
-    int typeCollision;
-} Bar;
-
-// Layout geral
+// Lógica do layout
 void phrase           (int coordX, int coordY, char *list, int lenList, short cor);
 void write_score      (int coordX, int coordY, int score);
 void screen_defeat    (int score);
 void screen_victory   ();
 void create_menu      ();
 void game_field       (Block blocksList[], int score, int state_game);
+
+// Escrita na tela
 void title            (int coordX, int coordY);
 void alphanumeric     (int coordX, int coordY, char caracter, short cor);
+void rocket           (int coordX, int coordY, int cor1, int cor2);
+void explosion        (int coordX, int coordY, int cor1, int cor2);
 
 // Blocos
 void makeBlocks       (Block blocksList[]);
