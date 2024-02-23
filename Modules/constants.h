@@ -1,3 +1,8 @@
+#ifndef CONSTANTS_H_INCLUDED
+#define CONSTANTS_H_INCLUDED
+
+#include "prototype.h"
+
 #define SCREEN_X                320
 #define SCREEN_Y                240
 #define WALL_WIDHT_X            3
@@ -9,3 +14,5 @@
 #define QUANTITY_BLOCKS         48  // valor original: 48
 #define BLOCK_LENGTH            37 
 #define BLOCK_WIDHT             12
+
+#endif // CONSTANTS_H_INCLUDED

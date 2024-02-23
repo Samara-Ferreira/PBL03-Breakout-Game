@@ -1,3 +1,8 @@
+#ifndef STRUCTS_H_INCLUDED
+#define STRUCTS_H_INCLUDED
+
+#include "prototype.h"
+
 typedef struct {
     int coordX;         /* x do canto superior esquerdo */ 
     int coordY;         /* y do canto superior esquerdo */
@@ -36,3 +41,5 @@ typedef struct {
     Explosion *begin;
 
 } List;
+
+#endif // STRUCTS_H_INCLUDED
