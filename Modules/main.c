@@ -136,7 +136,7 @@ int main() {
 
         else {
 
-            screen_victory_continuous();
+            screen_victory();
 
         }
     
