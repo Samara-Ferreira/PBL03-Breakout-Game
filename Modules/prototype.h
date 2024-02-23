@@ -42,6 +42,7 @@ typedef struct {
 typedef struct {
     int coordX;
     int coordY;
+    int typeCollision;
 } Bar;
 
 // Layout geral
