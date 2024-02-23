@@ -22,7 +22,7 @@ void reset_data (Ball *ball, Bar *bar, int *score) {
     ball->ballPositionX = SCREEN_X / 2;
     ball->ballPositionY = SCREEN_Y - 120;
     ball->ballSpeedX = 1;
-    ball->ballSpeedY = 2;
+    ball->ballSpeedY = 1;
     ball->collision = -1;
     
     bar->coordX = SCREEN_X / 2;
@@ -59,7 +59,6 @@ int main() {
     video_open();
     
     makeBlocks (blocksList);
-  
     
     while (1) {
     
@@ -137,16 +136,7 @@ int main() {
 
         else {
 
-            do {
-
-                KEY_read(&buttons);
-
-                video_clear();
-                video_erase();
-                screen_victory();
-                video_show();
-
-            } while (buttons != 1);
+            screen_victory_continuous();
 
         }
     

@@ -750,7 +750,7 @@ typedef struct {
 
 } List;
 
-void screen_victory_continuous () {
+void screen_victory () {
 
     char victory_message[7] = "you win";
 
