@@ -1,12 +1,26 @@
+/**
+ *  Função de utilização dos dados dos botões.
+ */
+
+
 #include "prototype.h"
 
+/**
+ * Alteração do estado atual do jogo.
+ * 
+ * Utiliza o estado atual do jogo e as alterações dos sinais dos botões para indicar qual será o próximo estado.
+ * 
+ * @param pointer_state   Ponteiro indicando o endereço que armazena o estado atual do jogo.
+ * @param pointer_buttons Ponteiro indicando o endereço que armazena o sinais lidos dos botões.
+ * @return void
+ */
 void change_state(int *pointer_state, int *pointer_buttons) {
 
     /*
         state = 0; tela inicial
         state = 1; jogo rodando
-        state = 2; em pausa play
-        state = 3; em pausa exit
+        state = 2; em pausa com opção de play
+        state = 3; em pausa com opção de exit
     */
 
     switch (*pointer_state) {
