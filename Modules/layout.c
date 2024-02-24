@@ -151,8 +151,12 @@ void screen_victory () {
 
         for ( i = 0; i < list.len; i++) {
 
-            explosion ( aux->coordX, aux->coordY, aux->color, yellow);
-            aux = aux->prox;
+            if (i < 7) {
+
+                explosion ( aux->coordX, aux->coordY, aux->color, yellow);
+                aux = aux->prox;
+
+            }
 
         }
 
