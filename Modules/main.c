@@ -47,7 +47,6 @@ int main() {
 
     KEY_open();
 
-
     int ready, tap, dtap, velX, velY, velZ, mg_per_lsb;
 
     accel_open();
@@ -59,7 +58,9 @@ int main() {
     video_open();
     
     makeBlocks (blocksList);
-    
+
+    KEY_read(&buttons);
+
     while (1) {
     
     	state_game = 0;
@@ -86,8 +87,8 @@ int main() {
             
                 game_field (blocksList, score, state_game);
                 
-                bola9x9 (ball.ballPositionX, ball.ballPositionY, 0xFfe0);
-                video_box( bar.coordX - BAR_SIZE, bar.coordY - BAR_WIDHT, bar.coordX + BAR_SIZE,bar.coordY + BAR_WIDHT , 0xFC18);
+                bola9x9 (ball.ballPositionX, ball.ballPositionY, 0xffe0);
+                video_box( bar.coordX - BAR_SIZE, bar.coordY - BAR_WIDHT, bar.coordX + BAR_SIZE,bar.coordY + BAR_WIDHT , 0xfc18);
             
                 video_show();
 
@@ -101,6 +102,7 @@ int main() {
              
 
                 removeBlocks(blocksList, &score, &ball);
+
             
             } else if (state_game == 2) {
 
@@ -141,8 +143,6 @@ int main() {
         }
     
     }
-    
-
    
     return 0;
 }
