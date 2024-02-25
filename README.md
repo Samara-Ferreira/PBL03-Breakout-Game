@@ -1,4 +1,5 @@
 <h1 align="center"> Breakout game</h1>
+<h3 align="center"> Jogo inspirado no clássico Breakout, desenvolvido para o kit de desenvolvimento DE1-SoC utilizando linguagem C </h3>
 
 <div align="justify"> 
 <div id="sobre-o-projeto"> 
@@ -100,6 +101,9 @@ O sistema de pontuação é baseado na quebra de blocos após cada colisão. Cad
 <h3> Finalização do Jogo </h3>
 Existem duas condições de finalização do jogo: vitória ou derrota do jogador. A vitória é alcançada quando todos os blocos são quebrados durante a partida. Por outro lado, a derrota ocorre sempre que a bola ultrapassa o nível da prancha, resultando em sua queda e encerramento do jogo.
 
+</div>
+</div>
+
 <div id="Algoritmos"> 
 <h2> Algoritmos de Jogo </h2>
 <div align="justify">
@@ -124,6 +128,8 @@ O algoritmo de verificação contínua de colisões funciona da seguinte maneira
 
 Se uma colisão é detectada em algum ponto intermediário, a bola é movida para a posição onde ocorreu a colisão, e o tipo de colisão é informado para que a reflexão adequada seja realizada na próxima interação. Por outro lado, se nenhum ponto intermediário apresentar colisão, a bola realiza um movimento normal entre os quadros, sem nenhuma reflexão.
 
+</div>
+</div>
 
 <div id="solucao-geral"> 
 <h2> Solução Geral do projeto </h2>
@@ -140,6 +146,25 @@ Se uma colisão é detectada em algum ponto intermediário, a bola é movida par
 <div id="execucaoProjeto"> 
 <h2> Execução do Projeto  </h2>
 <div align="justify">
+
+Para iniciar o projeto, siga os passos abaixo para obter o código-fonte, compilar o código em C e executa-lo em um dispositivo FPGA DE1-SoC. 
+
+**Passo 1: Clonar o Repositório**
+
+Abra o terminal e execute o seguinte comando para obter o código do repositório:
+
+    git clone https://github.com/Samara-Ferreira/PBL03-Breakout-Game.git
+
+**Passo 2: Acessar o Diretório e Compilar o Código em C**
+
+    cd PBL03-Breakout-Game\Modules
+
+Compile e execute o código usando o comando:
+
+    make all
+
+</div>
+</div>
 
 <div id="referencias"> 
 <h2> Referências  </h2>
