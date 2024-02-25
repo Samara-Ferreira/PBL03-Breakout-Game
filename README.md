@@ -62,6 +62,44 @@ Os requisitos para elaboração do sistema são apresentados a seguir:
 <h2> Dinâmica e Regras de Jogo </h2>
 <div align="justify">
 
+O objetivo principal do jogo Breakout é destruir todos os blocos que compõem a estrutura do cenário, utilizando uma bolinha. O jogador assume o controle de uma prancha para rebater a bolinha e evitar que ela caia no "abismo", representado pela parte inferior da tela. Para garantir uma experiência dinâmica e desafiadora, o jogo conta com uma série de regras que serão apresentadas nesta seção.
+
+<h3> Jogabilidade: Controle da Prancha </h3>
+
+A movimentação da placa é baseada na inclinação da placa DE1-SoC. O jogador deverá posicionar a placa em uma certa inclinação para a direita ou esquerda, o que resultará na movimentação da prancha correspondente. Esse controle é realizado através do acelerômetro disponível na placa.
+
+É importante ressaltar que a movimentação da prancha está limitada pelas paredes laterais do cenário, ou seja, a prancha não pode ultrapassar essas paredes durante o jogo.
+
+Além disso, é crucial entender que a prancha não possui uma velocidade fixa. Sua velocidade varia de acordo com o ângulo de inclinação da placa. Quanto maior o ângulo de inclinação, maior será a velocidade da prancha, e vice-versa.
+
+Os gifs a seguir ilustram a movimentação da placa e a consequente movimentação da prancha de acordo com esses movimentos.
+
+<h3> Características da Bola e sua Movimentação </h3>
+
+A bola apresenta duas características principais: sua movimentação contínua e suas interações com as estruturas do cenário. Na física do jogo, a bolinha mantém um movimento incessante nos eixos horizontal (x) e vertical (y), exceto em casos específicos nos quais o botão de pausa é acionado.
+
+Quando a bolinha colide com algum objeto no cenário, como paredes laterais, superior, blocos ou a prancha controlada pelo jogador, ela é capaz de se refletir a partir do ponto de colisão. Essa reflexão pode ocorrer de três maneiras distintas: inversão de sentido apenas no eixo x, apenas no eixo y, ou simultaneamente nos dois eixos.
+
+Analisando as diferentes colisões com cada objeto do cenário, temos as seguintes características:
+
+* **Colisão com a Prancha:** Nesta colisão, a bolinha pode se refletir em três direções distintas, dependendo do ponto de impacto na prancha. A prancha é dividida em três partes: direita (a bolinha vai para a direita se bater nesse lado), esquerda (a bolinha vai para a esquerda se bater nesse lado) e centro (a bolinha reflete perfeitamente). Além disso, o ângulo e a velocidade da bolinha são alterados após a colisão, com cada lado da prancha oferecendo quatro velocidades diferentes e ângulos distintos de reflexão.
+
+* **Colisão com Paredes Laterais:** Ao colidir com uma das paredes laterais, a bolinha conserva sua direção no eixo y e inverte o sentido no eixo x.
+
+* **Colisão com a Parede Superior:** Quando a bolinha colide com a parede superior, ocorre o oposto das paredes laterais: ela mantém sua direção no eixo x e inverte o sentido no eixo y.
+
+* **Colisão entre Paredes Superior e Lateral:** Se a bolinha colide entre a parede superior e lateral, ocorre a inversão nos dois eixos simultaneamente.
+
+* **Colisão entre Prancha e Paredes Laterais:** Quando a bolinha colide entre a prancha e uma das laterais, também ocorre a inversão nos dois eixos simultaneamente.
+
+* **Colisão entre os blocos:** O último tipo de colisão é com os blocos. Se a colisão ocorre nas laterais, é invertido o eixo x; nas partes superior e inferior, é invertido o eixo y. Adicionalmente, há colisões específicas nas pontas dos blocos, onde o comportamento varia dependendo do movimento da bola (subindo ou descendo) e da presença de blocos adjacentes.
+
+<h3> Pontuação </h3>
+O sistema de pontuação é baseado na quebra de blocos após cada colisão. Cada fileira de blocos possui um valor específico a ser pontuado. Os níveis mais baixos até os superiores possuem as seguintes pontuações progressivas: 1, 3, 5, 7, 9 e 11.
+
+<h3> Finalização do Jogo </h3>
+Existem duas condições de finalização do jogo: vitória ou derrota do jogador. A vitória é alcançada quando todos os blocos são quebrados durante a partida. Por outro lado, a derrota ocorre sempre que a bola ultrapassa o nível da prancha, resultando em sua queda e encerramento do jogo.
+
 <div id="Algoritmos"> 
 <h2> Algoritmos de Jogo </h2>
 <div align="justify">
