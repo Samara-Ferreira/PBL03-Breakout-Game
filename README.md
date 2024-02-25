@@ -104,6 +104,27 @@ Existem duas condições de finalização do jogo: vitória ou derrota do jogado
 <h2> Algoritmos de Jogo </h2>
 <div align="justify">
 
+Para implementar as regras do jogo a nível de software, foram desenvolvidos diversos algoritmos responsáveis por gerenciar o comportamento dos elementos do jogo. Nesta seção, serão apresentadas as sequências responsáveis pela movimentação da bolinha e sua interação com os objetos do cenário.
+
+<h3> Algoritmo de Colisão </h3>
+
+Este algoritmo permite que a bolinha reconheça os objetos no cenário do jogo. Como todos os objetos têm formato retangular, exceto a bolinha, que é circular, foi desenvolvido um algoritmo clássico de detecção de colisão entre círculo e retângulo.
+
+A lógica do algoritmo baseia-se em comparar um círculo com certo  raio ligeiramente maior (raio da bola mais o raio de colisão) e um retângulo de dimensões h e b Inicialmente, é procurado o ponto mais próximo entre o círculo e o retângulo, analisando as dimensões x e y. Esta análise permite considerar apenas os limites do retângulo.
+
+Em seguida, é calculada a distância euclidiana entre a bola e o ponto de impacto utilizando o teorema de Pitágoras, e esse valor é arredondado, já que o jogo é em pixels. Se a distância calculada for menor ou igual ao raio da bola, significa que ocorreu uma colisão, e o algoritmo retorna 1. Caso contrário, retorna 0 para indicar que não houve colisão.
+
+<h3> Algoritmo de Verificação Contínua </h3>
+
+Em simulações físicas, a verificação de colisões é um processo contínuo e crucial para garantir a precisão e a fidelidade da simulação. Enquanto a abordagem discreta atualiza a posição dos objetos em intervalos fixos de tempo, a verificação contínua de colisões é mais precisa, evitando problemas como o "efeito de túnel".
+
+No contexto deste projeto, o algoritmo de verificação contínua de colisões é implementado para garantir que as colisões sejam detectadas entre cada intervalo de tempo, mesmo em movimentos rápidos ou objetos pequenos.
+
+O algoritmo de verificação contínua de colisões funciona da seguinte maneira: a partir de um número pré-definido de pontos intermediários entre a posição atual da bola e sua próxima posição, o algoritmo verifica se ocorrerá alguma colisão em cada ponto. Isso é feito ao calcular as coordenadas da bola em cada ponto intermediário e verificar se houve colisão com outros objetos do cenário.
+
+Se uma colisão é detectada em algum ponto intermediário, a bola é movida para a posição onde ocorreu a colisão, e o tipo de colisão é informado para que a reflexão adequada seja realizada na próxima interação. Por outro lado, se nenhum ponto intermediário apresentar colisão, a bola realiza um movimento normal entre os quadros, sem nenhuma reflexão.
+
+
 <div id="solucao-geral"> 
 <h2> Solução Geral do projeto </h2>
 <div align="justify">
