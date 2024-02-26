@@ -59,6 +59,83 @@ Os requisitos para elaboração do sistema são apresentados a seguir:
 <h2> Interface do Usuário </h2>
 <div align="justify">
 
+O jogo se inicia com a tela inicial mostrada abaixo. Ela exibe o título do jogo e a opção de iniciar a partida, sendo ela, a única opção disponível. Caso o quarto botão da placa seja pressionado, a partida se inicia. 
+
+<p align="center">
+  <img src="Images/interface_grafica_1.png" width = "600" />
+</p>
+<p align="center"><strong>Transição da tela inicial para a partida</strong></p>
+
+O campo de jogo possui os seguintes elementos: o valor do score atual exibido na parte superior esquerda; as linhas laterais e superior para delimitar a área que a bola pode percorrer; os blocos que devem ser destruídos, com cores variadas no decorrer das fileiras; a bola de jogo; e a barra inferior controlada pelo usuário. Caso o quarto botão da placa seja pressionado, a partida é pausada.
+
+<p align="center">
+  <img src="Images/interface_grafica_2.png" width = "600" />
+</p>
+<p align="center"><strong>Transição da partida para a partida pausada</strong></p>
+
+É indicado que a partida está pausada pela mensagem do canto superior direito e pela mudança da cor da bola. Além disso, também aparece ao lado a opção que o usuário pode escolher em seguida. Primeiramente aparece a opção de continuar o jogo, indicada pela palavra "play", e caso o quarto botão seja pressionado, é alterada para a opção de sair da partida, indicada pela palavra "exit". O quarto botão altera entre essas duas opções.
+
+<p align="center">
+  <img src="Images/interface_grafica_3.png" width = "600" />
+</p>
+<p align="center"><strong>Transição da partida pausada com a opção de "play" para a opção de "exit", e vice-versa</strong></p>
+
+Na tela de pause, o terceiro botão seleciona a opção atual, podendo sair da partida ou continuar o jogo. 
+
+<p align="center">
+  <img src="Images/interface_grafica_4.png" width = "600" />
+</p>
+<p align="center"><strong>Transição da partida pausada na opção de "play" para o retorno da partida</strong></p>
+
+<p align="center">
+  <img src="Images/interface_grafica_5.png" width = "600" />
+</p>
+<p align="center"><strong>Transição da partida pausada na opção de "exit" para o retorno da tela inicial</strong></p>
+
+Quando um bloco é destruído pela bola, ele não aparece mais na tela e sua respectiva pontuação é somada no score. 
+
+<p align="center">
+  <img src="Images/interface_grafica_6.png" width = "600" />
+</p>
+<p align="center"><strong>Ilustração da quebra de um bloco</strong></p>
+
+Se a bola ultrapassar a altura da barra inferior, a partida é encerrada, assim, a tela de derrota é exibida com a frase "game over" e o score alcançado. 
+
+<p align="center">
+  <img src="Images/interface_grafica_7.png" width = "600" />
+</p>
+<p align="center"><strong>Transição da partida para tela de derrota</strong></p>
+
+O uso do quarto botão faz a transição da tela de derrota para a tela inicial.
+
+<p align="center">
+  <img src="Images/interface_grafica_8.png" width = "600" />
+</p>
+<p align="center"><strong>Transição da tela de derrota para a tela inicial</strong></p>
+
+Caso todos os blocos sejam destruídos, a partida foi ganha. Na tela de vitória, é exibida a frase "you win" e dois foguetes sobem verticalmente.
+
+<p align="center">
+  <img src="Images/interface_grafica_9.png" width = "600" />
+</p>
+<p align="center"><strong>Transição da partida para tela de vitória</strong></p>
+
+A tela de vitória possui uma animação contínua de fogos de artifício. Quando chegam em certa altura, os fogos explodem e exibem os traços das explosões. Os fogos continuam surgindo, um por um, enquanto o usuário estiver na tela de vitória.
+
+<p align="center">
+  <img src="Images/interface_grafica_10.png" width = "600" />
+</p>
+<p align="center"><strong>Início da animação de fogos</strong></p>
+
+Caso o quarto botão seja pressionado, a tela de vitória é encerrada e o usuário volta a tela inicial.
+
+<p align="center">
+  <img src="Images/interface_grafica_11.png" width = "600" />
+</p>
+<p align="center"><strong>Transição da tela de vitória para a tela inicial</strong></p>
+
+</div>
+
 <div id="Regras-de-jogo"> 
 <h2> Dinâmica e Regras de Jogo </h2>
 <div align="justify">
