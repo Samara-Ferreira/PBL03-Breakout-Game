@@ -242,7 +242,7 @@ Se uma colisão é detectada em algum ponto intermediário, a bola é movida par
 <p align="center">
   <img src="Images/teste_4.gif" width = "600" />
 </p>
-<p align="center"><strong>Mudança de velocidade e direção da bola, dependendo do local que ela colide com a barra</strong></p>
+<p align="center"><strong>Mudança de velocidade e direção da bola dependendo do local que ela colide com a barra</strong></p>
 
 * Colisão da bola com as laterais dos blocos.
 
@@ -285,8 +285,6 @@ Se uma colisão é detectada em algum ponto intermediário, a bola é movida par
   <img src="Images/teste_10.gif" width = "600" />
 </p>
 <p align="center"><strong>Animação da tela de vitória</strong></p>
-
-
 
 <div id="conclusao"> 
 <h2> Conclusão </h2>
