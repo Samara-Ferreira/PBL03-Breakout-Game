@@ -216,9 +216,77 @@ Se uma colisão é detectada em algum ponto intermediário, a bola é movida par
 <h2> Testes Realizados </h2>
 <div align="justify">
 
-Quanto mais a bola se aproxima da lateral da barra, mais rápida será sua velocidade seguinte após a colisão. Colidir com o lado esquerdo da barra direciona a bola para a esquerda, e com o lado direito, para a direita.
+* Transição da tela inicial para a partida.
 
-![velocidade barra](https://github.com/Samara-Ferreira/PBL03-Breakout-Game/assets/109181824/c0d0a059-5815-4e16-9a21-07808fa3cccb)
+<p align="center">
+  <img src="Images/teste_1.gif" width = "600" />
+</p>
+<p align="center"><strong>Transição da tela inicial para a partida</strong></p>
+
+* Colisão da bola com a parte do meio inferior de um bloco, e com a parte do meio da barra, preservando sua direção.
+
+<p align="center">
+  <img src="Images/teste_2.gif" width = "600" />
+</p>
+<p align="center"><strong>Colisão da bola com o meio inferior do bloco e com o meio da barra</strong></p>
+
+* Colisão da bola com as paredes laterais e superior.
+
+<p align="center">
+  <img src="Images/teste_3.gif" width = "600" />
+</p>
+<p align="center"><strong>Colisão da bola com as paredes laterais e superior</strong></p>
+
+* Colisão da bola com as diferentes partes da barra. Quanto mais a bola se aproxima da lateral, mais rápida será sua velocidade seguinte após a colisão. Colidir com o lado esquerdo direciona a bola para a esquerda, e com o lado direito, para a direita.
+
+<p align="center">
+  <img src="Images/teste_4.gif" width = "600" />
+</p>
+<p align="center"><strong>Mudança de velocidade e direção da bola, dependendo do local que ela colide com a barra</strong></p>
+
+* Colisão da bola com as laterais dos blocos.
+
+<p align="center">
+  <img src="Images/teste_5.gif" width = "600" />
+</p>
+<p align="center"><strong>Colisão da bola com as laterais dos blocos</strong></p>
+
+* Colisão simultânea com dois blocos, na parte inferior e na lateral.
+
+<p align="center">
+  <img src="Images/teste_6.gif" width = "600" />
+</p>
+<p align="center"><strong>Colisão da bola com dois blocos simultaneamente</strong></p>
+
+* Colisão da bola com a ponta do bloco.
+
+<p align="center">
+  <img src="Images/teste_7.gif" width = "600" />
+</p>
+<p align="center"><strong>Colisão da bola com a ponta do bloco</strong></p>
+
+* Aparecimento da tela de derrota após a bola ultrapassar o limite inferior do campo de jogo. Transição da tela de derrota para a tela inicial.
+
+<p align="center">
+  <img src="Images/teste_8.gif" width = "600" />
+</p>
+<p align="center"><strong>Transição de tela na perda de jogo</strong></p>
+
+* Pausando a partida e selecionando as opções de continuar e voltar para a tela inicial.
+
+<p align="center">
+  <img src="Images/teste_9.gif" width = "600" />
+</p>
+<p align="center"><strong>Opções do estado de pausa</strong></p>
+
+* Animação da tela de vitória.
+
+<p align="center">
+  <img src="Images/teste_10.gif" width = "600" />
+</p>
+<p align="center"><strong>Animação da tela de vitória</strong></p>
+
+
 
 <div id="conclusao"> 
 <h2> Conclusão </h2>
