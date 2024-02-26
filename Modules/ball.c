@@ -1,5 +1,12 @@
 #include "prototype.h"
 
+/**
+ * Função para exibir a bola na tela
+ * @param coordX Coordenada do centro da bola no eixo x
+ * @param coordY Coordenada do centro da bola no eixo y
+ * @param cor Cor da bola
+ * @return void
+*/
 void bola9x9 (int coordX, int coordY, short cor) {
     video_box(coordX - 1, coordY - 4, coordX + 1, coordY - 4, cor);
 	video_box(coordX - 3, coordY - 3, coordX + 3, coordY - 2, cor);
@@ -8,7 +15,19 @@ void bola9x9 (int coordX, int coordY, short cor) {
 	video_box(coordX - 1, coordY + 4, coordX + 1, coordY + 4, cor);
 }
 
-
+/**
+ * Função para verificar coliões entre retangulos e circulos
+ * @param x_rect Coordenada do canto superior esquerdo do retangulo no eixo x
+ * @param y_rect Coordenada do canto superior esquerdo do retangulo no eixo y
+ * @param length_rect Comprimento do retangulo
+ * @param width_rect Largura do retangulo
+ * @param x_boll Coordenada do centro da bola no eixo x
+ * @param y_boll Coordenada do centro da bola no eixo y
+ * @param ray Raio da bola
+ * @param x_point Coordenada do ponto de impacto no eixo x
+ * @param y_point Coordenada do ponto de impacto no eixo y
+ * @return 1 se houve colisão, 0 caso contrário
+*/
 int detect_collision(int x_rect, int y_rect, int length_rect, int width_rect,  int x_boll, int y_boll, int ray, int *x_point, int *y_point) {
 
     *x_point = x_boll;  /* Ponto de impacto em x */
@@ -37,6 +56,13 @@ int detect_collision(int x_rect, int y_rect, int length_rect, int width_rect,  i
     return 0;
 }
 
+/**
+ * Função para verificar se uma coordenada pertence a um bloco
+ * @param coordX Coordenada do ponto no eixo x
+ * @param coordY Coordenada do ponto no eixo y
+ * @param blocksList Lista de blocos
+ * @return 1 se a coordenada pertence a um bloco, 0 caso contrário
+*/
 int pertenceBloco(int coordX, int coordY, Block blocksList[]) {
     for (int i = 0; i < QUANTITY_BLOCKS; i++) {
         if ((blocksList[i].coordX <= coordX && coordX <= (blocksList[i].coordX + BLOCK_LENGTH)) && 
@@ -48,7 +74,13 @@ int pertenceBloco(int coordX, int coordY, Block blocksList[]) {
     return 0;
 }
 
-/* Buscar o tipo de colisão */
+/**
+ * Função para verificar o tipo de colisão
+ * @param ball Bola
+ * @param blocksList Lista de blocos
+ * @param bar Barra
+ * @return 1 para colisões em  x e y, 2 para colisões em x, 3 para colisões em y, 4 para colisões na barra, -1 caso contrário
+*/
 int getTypeCollision(Ball *ball, Block blocksList[], Bar *bar) {
     int x_point, y_point;
 
@@ -118,7 +150,12 @@ int getTypeCollision(Ball *ball, Block blocksList[], Bar *bar) {
     return -1;
 }
 
-/* Função para obter a velocidade resultante da bola */
+/**
+ * Função para pegar a velocidade a partir da colisão com a barra
+ * @param ball Bola
+ * @param bar Barra
+ * @return void
+*/
 void getVelcBall(Ball *ball, Bar *bar){
     if ((bar->coordX - ball->ballPositionX) / 6 != 0)
         ball->ballSpeedX = (bar->coordX - ball->ballPositionX) / 6;
@@ -131,7 +168,13 @@ void getVelcBall(Ball *ball, Bar *bar){
 
 }
 
-/* Função para mover a bola e evitar colisões */
+/**
+ * Função para pegar o próximo movimento da bola
+ * @param ball Bola
+ * @param blocksList Lista de blocos
+ * @param bar Barra
+ * @return 1 para colisões em  x e y, 2 para colisões em x, 3 para colisões em y, 4 para colisões na barra, -1 caso contrário
+*/
 int getMoveBall(Ball *ball, Block blocksList[], Bar *bar) {
     Ball auxBall = *ball;
 
@@ -167,13 +210,19 @@ int getMoveBall(Ball *ball, Block blocksList[], Bar *bar) {
 }
 
 
-/* Verificação dos possíveis casos de colisão */
+/**
+ * Função para mover a bola
+ * @param ball Bola
+ * @param blocksList Lista de blocos
+ * @param bar Barra
+ * @return void
+*/
 void moveBall(Ball *ball, Block blocksList[], Bar *bar) {
 
+    /* Switch para inversão da velocidade da bola*/
     switch (getMoveBall(ball, blocksList, bar)) {
     
     case (1):
-
         if ((ball->ballPositionY - COLLISION_RADIUS == (WALL_WIDHT_X + WALL_WIDHT_Y))){ //Superior
             if (ball->ballSpeedY < 0){
                 ball->ballSpeedX = -ball->ballSpeedX;
