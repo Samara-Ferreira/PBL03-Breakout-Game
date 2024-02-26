@@ -216,6 +216,10 @@ Se uma colisão é detectada em algum ponto intermediário, a bola é movida par
 <h2> Testes Realizados </h2>
 <div align="justify">
 
+Quanto mais a bola se aproxima da lateral da barra, mais rápida será sua velocidade seguinte após a colisão. Colidir com o lado esquerdo da barra direciona a bola para a esquerda, e com o lado direito, para a direita.
+
+![velocidade barra](https://github.com/Samara-Ferreira/PBL03-Breakout-Game/assets/109181824/c0d0a059-5815-4e16-9a21-07808fa3cccb)
+
 <div id="conclusao"> 
 <h2> Conclusão </h2>
 <div align="justify">
