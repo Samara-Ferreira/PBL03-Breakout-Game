@@ -1,3 +1,9 @@
+/**
+ * @file ball.c
+ * @date 2021-10-17
+ * @brief Arquivo que contém as funções para movimentar, verificar colisões e exibir a bola
+*/
+
 #include "prototype.h"
 
 /**

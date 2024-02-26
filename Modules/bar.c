@@ -1,3 +1,9 @@
+/**
+ * @file bar.c
+ * @date 2021-10-17
+ * @brief Arquivo que contém as funções para movimentar a barra
+*/
+
 #include "prototype.h"
 
 void moveBar(Bar *bar, int accelX) {

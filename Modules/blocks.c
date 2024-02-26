@@ -1,3 +1,9 @@
+/**
+ * @file blocks.c
+ * @date 2021-10-17
+ * @brief Arquivo que contém as funções para criar e remover os blocos
+*/
+
 #include "prototype.h"
 
 void makeBlocks (Block blocksList[]) {

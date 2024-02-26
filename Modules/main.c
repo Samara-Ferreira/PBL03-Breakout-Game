@@ -1,3 +1,9 @@
+/**
+ * @file main.c
+ * @date 2021-10-17
+ * @brief Arquivo principal do jogo
+*/
+
 #include "prototype.h"
 
 /**
