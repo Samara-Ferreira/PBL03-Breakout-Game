@@ -563,8 +563,7 @@ Compile e execute o código usando o comando:
 <h2> Referências  </h2>
 <div align="justify">
 
-* Introdução
-  * https://pop.proddigital.com.br/consoles/breakout
+CAMACHO, Karla (2023). Breakout. Disponível em: https://pop.proddigital.com.br/consoles/breakout. Acessado em: 24 de fevereiro de 2024.
 
 * Acelerômetro
   * https://docplayer.net/55053139-Using-the-accelerometer-on-de-soc-boards-1-introduction-for-quartus-prime-16-1.html
