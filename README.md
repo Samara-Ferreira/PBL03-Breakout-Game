@@ -47,13 +47,56 @@ Os requisitos para elaboração do sistema são apresentados a seguir:
 <h2> Descrição dos Equipamentos e Software Utilizados</h2>
 <div align="justify"> 
 
+</div>
+</div>
+
 <div id="arq_CPU"> 
 <h2> Arquitetura da placa DE1-SoC</h2>
 <div align="justify">
 
+Nesta seção, será explorado a arquitetura da placa DE1-SoC, incluindo o processador ARM Cortex-A9, a estrutura de registros, o mapeamento de dispositivos de entrada/saída na memória, a memória utilizada, a comunicação entre o processador e o FPGA, e o processo de compilação nativa na placa
+
+<h3>Visão Geral dos Recursos do Processador ARM Cortex-A9 </h3>
+
+O processador ARM Cortex-A9 utiliza uma arquitetura de conjunto de instruções reduzido (RISC), onde as operações aritméticas e lógicas são realizadas nos registradores de uso geral. Os dados são movidos entre memória e registradores através de instruções Load e Store, com um comprimento de palavra de 32 bits e endereços de bytes em um estilo little-endian.
+
+<h3>Estrutura do Registro</h3>
+
+O processador ARM Cortex-A9 possui 15 registros de uso geral (R0 a R14), um contador de programa (R15) e um registro de status de programa atual, CPSR, todos com 32 bits. Dois registros são tratados de maneira especial: R13 é o Stack Pointer e R14 é um registro de link na ligação de sub-rotina.
+
+<h3>Instruções e Conjunto Thumb</h3>
+
+As instruções têm 32 bits e são armazenadas na memória alinhadas por palavras. O conjunto Thumb oferece uma versão menor com instruções de 16 bits, resultando em requisitos menores de memória, úteis em aplicativos incorporados.
+
+<h3>Memória</h3>
+
+O HPS inclui uma porta de memória que conecta o ARM MPCORE a uma memória DDR3 de 1 GB. Esta memória é normalmente utilizada como local de armazenamento de programas e dados pelos processadores ARM. A memória é organizada em 256M x 32 bits e pode ser acessada por meio de acessos de palavras (32 bits), meias palavras e bytes.
+
+<h3>Mapeamento de Dispositivos de E/S</h3>
+
+Os dispositivos de entrada/saída acessíveis pelo processador ARM são mapeados na memória e podem ser acessados como locais de memória, utilizando instruções Load e Store.
+
+<h3>Diagrama de Blocos do Sistema DE1-SoC</h3>
+
+O sistema DE1-SoC é composto pelo Hard Processor System (HPS) e FPGA dentro do chip Cyclone V SoC. O HPS inclui um processador dual-core ARM Cortex-A9, uma porta de memória DDR3 e dispositivos periféricos. O FPGA implementa dois processadores Intel Nios II e várias portas periféricas.
+
+<h3>Comunicação entre Processador e FPGA via JTAG</h3>
+
+A porta JTAG implementa um link de comunicação entre a placa DE1-SoC e seu computador host, permitindo a transferência de arquivos de programação FPGA para a placa DE1-SoC e o monitoramento por meio do programa Intel FPGA Monitor.
+
+<h3>Compilação Nativa na Placa DE1-SoC</h3>
+
+O processo de compilação nativa ocorre quando um programa é compilado em um sistema para rodar na mesma arquitetura do próprio sistema. Neste caso, vamos compilar nativamente um programa por meio da interface de linha de comando do Linux, usando sua cadeia de ferramentas de compilação integrada. O comando gcc invoca o GNU C Compiler, um compilador de código aberto amplamente usado para compilar programas Linux.
+
+</div>
+</div>
+
 <div id="Drives"> 
 <h2> Drives de Dispositivos de Entrada e Saída (I/O)</h2>
 <div align="justify">
+
+</div>
+</div>
 
 <div id="Inteface-Grafica"> 
 <h2> Interface do Usuário </h2>
