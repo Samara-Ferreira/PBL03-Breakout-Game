@@ -148,7 +148,35 @@ Existem outros dois registradores, o "interruptmask" e o "edgecapture". Esses re
 <h2> Drives de Dispositivos de Entrada e Saída (I/O)</h2>
 <div align="justify">
 
+Para realizar a comunicação com os dispositivos periféricos de hardware, é preciso utilizar programas de software, chamados de drivers, que vão disponibilizar a interface necessária para executar comandos nesses dispositivos. Os tipos de drivers utilizados foram os módulos de núcleo, sendo eles, módulos que podem ser adicionados ao núcleo na execução do programa.
 
+A distribuição de Linux do DE1-SoC-UP disponibiliza módulos de núcleo prontos para realizar essa comunicação. Na linguagem C, esses módulos podem ser acessados adicionando na compilação do programa o comando "-lintelfpgaup", e no código, a declaração "#include <intelfpgaup/xxx.h>", sendo "xxx", o nome do driver utilizado. A seguir, serão descritas as funções pertinentes dos módulos de núcleo utilizados.
+
+<h3> Porta de saída de vídeo </h3>
+
+Módulo indicado pelo nome "video". As funções utilizadas são:
+
+* video_open: Abre o dispositivo de vídeo VGA;
+* video_clear: Limpa todos os gráficos do buffer de pixels que não está sendo transmitido;
+* video_erase: Limpa todos os dados de caracteres da tela;
+* video_show: Faz a troca entre os buffers, modificando qual será transmitido para o monitor VGA;
+* video_box: Escreve um quadrado ou retângulo no buffer que não está sendo transmitido. Nos seus parâmetros, são passadas as coordenadas das extremidades opostas da forma geométrica e a cor que ela terá.
+
+<h3> Acelerômetro </h3>
+
+Módulo indicado pelo nome "accel". As funções utilizadas são:
+
+* accel_open: Abre o dispositivo do acelerômetro;
+* accel_read: Lê os dados do acelerômetro. Os seus parâmetros utilizados são ponteiros que irão setar os valores dos três eixos nos endereços indicados;
+* accel_init: Inicializa o dispositivo do acelerômetro;
+* accel_calibrate: calibra o dispositivo do acelerômetro.
+
+<h3> Botões </h3>
+
+Módulo indicado pelo nome "KEYS". As funções utilizadas são:
+
+* KEY_open: Abre o dispositivo dos botões;
+* KEY_read: Lê os dados os botões. É passado como parâmetro um ponteiro que irá setar os sinais retornados dos botões no endereço indicado. Os sinais coletados não representam o estado atual dos botões, mas, sim, se eles foram pressionados antes da última leitura. Portanto é preciso liberar os resquícios de dados antes de iniciar a lógica do sistema.
 
 </div>
 
