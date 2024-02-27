@@ -271,7 +271,7 @@ Em seguida, é calculada a distância euclidiana entre a bola e o ponto de impac
 A imagem apresenta um fluxograma do algoritmo, proporcionando uma visão do seu funcionamento. Além disso, fornece uma representação cartesiana para uma compreensão visual mais abrangente.
 
 <p align="center">
-  <img src="Images/Fruxograma-Colisoes.png" width = "600" />
+  <img src="Images/Fruxograma-Colisoes.png" width = "900" />
 </p>
 <p align="center"><strong> Fluxograma e visão cartesiana da detecção de colisão entre retângulo e círculo</strong></p>
 
@@ -298,9 +298,9 @@ Segue uma versão simplificada para facilitar o entendimento do algoritmo: um gr
 <p align="center"><strong> Modelo discreto e contínuo de verificação de colisão</strong></p>
 
 <p align="center">
-  <img src="Images/Fluxograma-MOV-Ball.png" width = "600" />
+  <img src="Images/Fluxograma-MOV-Ball.png" width = "900" />
 </p>
-<p align="center"><strong> Modelo discreto e contínuo de verificação de colisão</strong></p>
+<p align="center"><strong> Fluxograma do algoritmo de verificação contínua de colisão</strong></p>
 
 </div>
 </div>
@@ -309,6 +309,21 @@ Segue uma versão simplificada para facilitar o entendimento do algoritmo: um gr
 <h2> Solução Geral do projeto </h2>
 <div align="justify">
 
+A solução integral deste sistema demonstra sua capacidade completa de atender a todas as demandas requisitadas. Antes de entrar no loop principal do programa, os periféricos utilizados - VGA, acelerômetro e botões - são inicializados. Além disso, os elementos do jogo são iniciados, atribuindo suas características e posições iniciais. Por fim, a MEF (Máquina de Estados Finitos) da troca de telas é iniciada na tela de menu.
+
+Dentro do loop principal, o sistema busca e exibe qual tela deve ser mostrada com base no estado atual. Após a exibição, o programa verifica se a tela atual é a do jogo. Se não for, verifica se algum botão foi pressionado para realizar a troca de cenário. Caso contrário, a execução retorna ao início do loop principal.
+
+Se o jogo estiver em execução, o sistema lê o acelerômetro para verificar a movimentação da placa. Em seguida, move os objetos do jogo - bola e barra. A movimentação da barra é baseada nos dados do acelerômetro, enquanto a bola se move conforme o algoritmo de verificação contínua.
+
+Após realizar todos os movimentos, o sistema analisa se a bola atingiu algum bloco e, se sim, remove esses blocos. Por fim, verifica se o jogo chegou ao fim. Se não, verifica se houve pressionamento de botão durante os passos anteriores e realiza a troca ou não de telas. Se o jogo terminar, os elementos do jogo são reorganizados para uma nova partida e a tela é alterada para a de vitória ou derrota. Em seguida, o loop principal é executado novamente.
+
+Para uma compreensão mais clara da explicação, apresentamos abaixo um fluxograma detalhando o algoritmo utilizado na solução geral.
+
+<p align="center">
+  <img src="Images/Fruxograma-solucao.png" width = "900" />
+</p>
+<p align="center"><strong> Fluxograma da solução geral do problema</strong></p>
+
 <div id="testes"> 
 <h2> Testes Realizados </h2>
 <div align="justify">
@@ -316,70 +331,70 @@ Segue uma versão simplificada para facilitar o entendimento do algoritmo: um gr
 * Transição da tela inicial para a partida.
 
 <p align="center">
-  <img src="Images/teste_1.gif" width = "600" />
+  <img src="Images/teste_1.gif" width = "400" />
 </p>
 <p align="center"><strong>Transição da tela inicial para a partida</strong></p>
 
 * Colisão da bola com a parte do meio inferior de um bloco, e com a parte do meio da barra, preservando sua direção.
 
 <p align="center">
-  <img src="Images/teste_2.gif" width = "600" />
+  <img src="Images/teste_2.gif" width = "400" />
 </p>
 <p align="center"><strong>Colisão da bola com o meio inferior do bloco e com o meio da barra</strong></p>
 
 * Colisão da bola com as paredes laterais e superior.
 
 <p align="center">
-  <img src="Images/teste_3.gif" width = "600" />
+  <img src="Images/teste_3.gif" width = "400" />
 </p>
 <p align="center"><strong>Colisão da bola com as paredes laterais e superior</strong></p>
 
 * Colisão da bola com as diferentes partes da barra. Quanto mais a bola se aproxima da lateral, mais rápida será sua velocidade seguinte após a colisão. Colidir com o lado esquerdo direciona a bola para a esquerda, e com o lado direito, para a direita.
 
 <p align="center">
-  <img src="Images/teste_4.gif" width = "600" />
+  <img src="Images/teste_4.gif" width = "400" />
 </p>
 <p align="center"><strong>Mudança de velocidade e direção da bola dependendo do local que ela colide com a barra</strong></p>
 
 * Colisão da bola com as laterais dos blocos.
 
 <p align="center">
-  <img src="Images/teste_5.gif" width = "600" />
+  <img src="Images/teste_5.gif" width = "400" />
 </p>
 <p align="center"><strong>Colisão da bola com as laterais dos blocos</strong></p>
 
 * Colisão simultânea com dois blocos, na parte inferior e na lateral.
 
 <p align="center">
-  <img src="Images/teste_6.gif" width = "600" />
+  <img src="Images/teste_6.gif" width = "400" />
 </p>
 <p align="center"><strong>Colisão da bola com dois blocos simultaneamente</strong></p>
 
 * Colisão da bola com a ponta do bloco.
 
 <p align="center">
-  <img src="Images/teste_7.gif" width = "600" />
+  <img src="Images/teste_7.gif" width = "400" />
 </p>
 <p align="center"><strong>Colisão da bola com a ponta do bloco</strong></p>
 
 * Aparecimento da tela de derrota após a bola ultrapassar o limite inferior do campo de jogo. Transição da tela de derrota para a tela inicial.
 
 <p align="center">
-  <img src="Images/teste_8.gif" width = "600" />
+  <img src="Images/teste_8.gif" width = "400" />
 </p>
 <p align="center"><strong>Transição de tela na perda de jogo</strong></p>
 
 * Pausando a partida e selecionando as opções de continuar e voltar para a tela inicial.
 
 <p align="center">
-  <img src="Images/teste_9.gif" width = "600" />
+  <img src="Images/teste_9.gif" width = "400" />
 </p>
 <p align="center"><strong>Opções do estado de pausa</strong></p>
 
 * Animação da tela de vitória.
 
 <p align="center">
-  <img src="Images/teste_10.gif" width = "600" />
+  <img src="Images/teste_10.gif" width = "400" />
 </p>
 <p align="center"><strong>Animação da tela de vitória</strong></p>
 
