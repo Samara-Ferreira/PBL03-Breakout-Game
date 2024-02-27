@@ -562,3 +562,16 @@ Compile e execute o código usando o comando:
 <div id="referencias"> 
 <h2> Referências  </h2>
 <div align="justify">
+
+* Introdução
+  * https://pop.proddigital.com.br/consoles/breakout
+
+* Acelerômetro
+  * https://docplayer.net/55053139-Using-the-accelerometer-on-de-soc-boards-1-introduction-for-quartus-prime-16-1.html
+
+* Porta de saída de vídeo
+
+* Botões
+
+* Módulos de núcleo
+  * https://fpgacademy.org/Downloads/DE1-SoC_Computer_ARM.pdf 
