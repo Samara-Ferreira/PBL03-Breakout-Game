@@ -140,43 +140,116 @@ Caso o quarto botão seja pressionado, a tela de vitória é encerrada e o usuá
 <h2> Dinâmica e Regras de Jogo </h2>
 <div align="justify">
 
-O objetivo principal do jogo Breakout é destruir todos os blocos que compõem a estrutura do cenário, utilizando uma bolinha. O jogador assume o controle de uma prancha para rebater a bolinha e evitar que ela caia no "abismo", representado pela parte inferior da tela. Para garantir uma experiência dinâmica e desafiadora, o jogo conta com uma série de regras que serão apresentadas nesta seção.
+O objetivo principal do jogo Breakout é destruir todos os blocos que compõem a estrutura do cenário, utilizando uma bolinha. O jogador assume o controle de uma barra para rebater a bolinha e evitar que ela caia no "abismo", representado pela parte inferior da tela. Para garantir uma experiência dinâmica e desafiadora, o jogo conta com uma série de regras que serão apresentadas nesta seção.
 
-<h3> Jogabilidade: Controle da Prancha </h3>
+<h3> Jogabilidade: Controle da Barra </h3>
 
-A movimentação da placa é baseada na inclinação da placa DE1-SoC. O jogador deverá posicionar a placa em uma certa inclinação para a direita ou esquerda, o que resultará na movimentação da prancha correspondente. Esse controle é realizado através do acelerômetro disponível na placa.
+A movimentação da placa é baseada na inclinação da placa DE1-SoC. O jogador deverá posicionar a placa em uma certa inclinação para a direita ou esquerda, o que resultará na movimentação da barra correspondente. Esse controle é realizado através do acelerômetro disponível na placa.
 
-É importante ressaltar que a movimentação da prancha está limitada pelas paredes laterais do cenário, ou seja, a prancha não pode ultrapassar essas paredes durante o jogo.
+É importante ressaltar que a movimentação da barra está limitada pelas paredes laterais do cenário, ou seja, a barra não pode ultrapassar essas paredes durante o jogo.
 
-Além disso, é crucial entender que a prancha não possui uma velocidade fixa. Sua velocidade varia de acordo com o ângulo de inclinação da placa. Quanto maior o ângulo de inclinação, maior será a velocidade da prancha, e vice-versa.
+Além disso, é crucial entender que a barra não possui uma velocidade fixa. Sua velocidade varia de acordo com o ângulo de inclinação da placa. Quanto maior o ângulo de inclinação, maior será a velocidade da barra, e vice-versa.
 
-Os gifs a seguir ilustram a movimentação da placa e a consequente movimentação da prancha de acordo com esses movimentos.
+Os gifs a seguir ilustram a movimentação da placa e a consequente movimentação da barra de acordo com esses movimentos.
+
+<p align="center">
+  <img src="Images/mov-placa.gif" width = "600" />
+</p>
+<p align="center"><strong> Movimento da barra a partir do movimento da placa</strong></p>
 
 <h3> Características da Bola e sua Movimentação </h3>
 
 A bola apresenta duas características principais: sua movimentação contínua e suas interações com as estruturas do cenário. Na física do jogo, a bolinha mantém um movimento incessante nos eixos horizontal (x) e vertical (y), exceto em casos específicos nos quais o botão de pausa é acionado.
 
-Quando a bolinha colide com algum objeto no cenário, como paredes laterais, superior, blocos ou a prancha controlada pelo jogador, ela é capaz de se refletir a partir do ponto de colisão. Essa reflexão pode ocorrer de três maneiras distintas: inversão de sentido apenas no eixo x, apenas no eixo y, ou simultaneamente nos dois eixos.
+Quando a bolinha colide com algum objeto no cenário, como paredes laterais, superior, blocos ou a barra controlada pelo jogador, ela é capaz de se refletir a partir do ponto de colisão. Essa reflexão pode ocorrer de três maneiras distintas: inversão de sentido apenas no eixo x, apenas no eixo y, ou simultaneamente nos dois eixos.
 
 Analisando as diferentes colisões com cada objeto do cenário, temos as seguintes características:
 
-* **Colisão com a Prancha:** Nesta colisão, a bolinha pode se refletir em três direções distintas, dependendo do ponto de impacto na prancha. A prancha é dividida em três partes: direita (a bolinha vai para a direita se bater nesse lado), esquerda (a bolinha vai para a esquerda se bater nesse lado) e centro (a bolinha reflete perfeitamente). Além disso, o ângulo e a velocidade da bolinha são alterados após a colisão, com cada lado da prancha oferecendo quatro velocidades diferentes e ângulos distintos de reflexão.
+
+<h4> Colisão com a Prancha </h4>
+
+ Durante a colisão com a prancha, a bolinha pode refletir-se em três direções distintas, dependendo do ponto de impacto na prancha. A prancha é dividida em três partes: direita, esquerda e centro. Quando a bolinha atinge a parte direita da prancha, ela é refletida para a direita; quando atinge a parte esquerda, é refletida para a esquerda; e quando atinge o centro, ocorre uma reflexão perfeita.
+ 
+ Além disso, após a colisão, tanto o ângulo quanto a velocidade da bolinha são alterados. Cada lado da prancha oferece quatro velocidades diferentes e ângulos distintos de reflexão, o que adiciona variedade e desafio ao jogo.
+
+Para visualizar essas colisões, são disponibilizadas duas imagens anexas. A primeira imagem ilustra a mudança de direção da bolinha apenas no eixo y, alterando seu ângulo a partir do ponto de colisão. Já a segunda imagem mostra a inversão nos eixos x e y, proporcionando uma mudança significativa na trajetória da bolinha.
+
+<p align="center">
+  <img src="Images/Colisao-barra1.png" width = "600" />
+</p>
+<p align="center"><strong> Bola colidindo nas 3 zonas da barra e tendo sua direção alterada no eixo y</strong></p>
+
+<p align="center">
+  <img src="Images/Colisao-barra2.png" width = "600" />
+</p>
+<p align="center"><strong> Bola colidindo nas 3 zonas da barra e tendo sua direção alterada no eixo x e y</strong></p>
+
+<h4> Colisão com as Paredes </h4>
+
+Durante a colisão com as paredes, a bolinha experimenta uma reflexão perfeita a partir do ponto onde ocorreu a colisão. Em cada caso de colisão com a parede, as seguintes situações são observadas:
 
 * **Colisão com Paredes Laterais:** Ao colidir com uma das paredes laterais, a bolinha conserva sua direção no eixo y e inverte o sentido no eixo x.
 
+<p align="center">
+  <img src="Images/Colisao-parede-lateral.png" width = "600" />
+</p>
+<p align="center"><strong> Bola colidindo com as paredes laterais direita e esquerda, e mudando sua trajetóia</strong></p>
+
 * **Colisão com a Parede Superior:** Quando a bolinha colide com a parede superior, ocorre o oposto das paredes laterais: ela mantém sua direção no eixo x e inverte o sentido no eixo y.
+
+<p align="center">
+  <img src="Images/Colisao-parede-superior.png" width = "600" />
+</p>
+<p align="center"><strong> Bola colidindo com a paredes superior e mudando sua trajetóia</strong></p>
 
 * **Colisão entre Paredes Superior e Lateral:** Se a bolinha colide entre a parede superior e lateral, ocorre a inversão nos dois eixos simultaneamente.
 
-* **Colisão entre Prancha e Paredes Laterais:** Quando a bolinha colide entre a prancha e uma das laterais, também ocorre a inversão nos dois eixos simultaneamente.
+<p align="center">
+  <img src="Images/Colisao-parede-lateral-superior.png" width = "600" />
+</p>
+<p align="center"><strong> Bola colidindo com a paredes superior e lateral ao mesmo tempo, e mudando sua trajetóia</strong></p>
 
-* **Colisão entre os blocos:** O último tipo de colisão é com os blocos. Se a colisão ocorre nas laterais, é invertido o eixo x; nas partes superior e inferior, é invertido o eixo y. Adicionalmente, há colisões específicas nas pontas dos blocos, onde o comportamento varia dependendo do movimento da bola (subindo ou descendo) e da presença de blocos adjacentes.
+* **Colisão entre barra e Paredes Laterais:** Quando a bolinha colide entre a barra e uma das laterais, também ocorre a inversão nos dois eixos simultaneamente.
+
+<p align="center">
+  <img src="Images/Colisao-barra-parede-lateral.png" width = "600" />
+</p>
+<p align="center"><strong> Bola colidindo com a parede lateral e a barra, e mudando sua trajetóia</strong></p>
+
+<h4> Colisão com os blocos </h4>
+
+ O último tipo de colisão é com os blocos. Se a colisão ocorre nas laterais, é invertido o eixo x; nas partes superior e inferior, é invertido o eixo y. Adicionalmente, há colisões específicas nas pontas dos blocos, onde o comportamento varia dependendo do movimento da bola (subindo ou descendo) e da presença de blocos adjacentes. Assim, segue algumas imagens para ilustrar essas colisões.
+
+<p align="center">
+  <img src="Images/Colisao-bloco-lateral.png" width = "600" />
+</p>
+<p align="center"><strong> Bola colidindo com as partes laterais do bloco e mudando sua trajetóia</strong></p>
+
+<p align="center">
+  <img src="Images/Colisao-bloco-superior-inferior.png" width = "600" />
+</p>
+<p align="center"><strong> Bola colidindo com a parte superior e inferior do bloco, e mudando sua trajetóia</strong></p>
+
+<p align="center">
+  <img src="Images/Colisao-bloco-pontas.png" width = "600" />
+</p>
+<p align="center"><strong> Bola colidindo com os vértices do bloco e mudando sua trajetória nas três possibilidades</strong></p>
 
 <h3> Pontuação </h3>
 O sistema de pontuação é baseado na quebra de blocos após cada colisão. Cada fileira de blocos possui um valor específico a ser pontuado. Os níveis mais baixos até os superiores possuem as seguintes pontuações progressivas: 1, 3, 5, 7, 9 e 11.
 
+<p align="center">
+  <img src="Images/Pontos.png" width = "600" />
+</p>
+<p align="center"><strong> fileira de blocos e seus pontos </strong></p>
+
 <h3> Finalização do Jogo </h3>
-Existem duas condições de finalização do jogo: vitória ou derrota do jogador. A vitória é alcançada quando todos os blocos são quebrados durante a partida. Por outro lado, a derrota ocorre sempre que a bola ultrapassa o nível da prancha, resultando em sua queda e encerramento do jogo.
+Existem duas condições de finalização do jogo: vitória ou derrota do jogador. A vitória é alcançada quando todos os blocos são quebrados durante a partida. Por outro lado, a derrota ocorre sempre que a bola ultrapassa o nível da barra, resultando em sua queda e encerramento do jogo.
+
+<p align="center">
+  <img src="Images/perde.png" width = "600" />
+</p>
+<p align="center"><strong> Bola ultrapassando a linha limite do jogo e perdendo o jogo</strong></p>
 
 </div>
 </div>

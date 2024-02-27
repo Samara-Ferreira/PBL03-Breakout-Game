@@ -96,6 +96,8 @@ int main() {
             
             /* switch para mudar a tela de acordo com o estado */
             if (state_game == 0) {          // Tela inicial
+
+                /*Desenhar elementos do jogo*/ 
                 reset_data  (&ball, &bar, &score);
                 makeBlocks  (blocksList);
                 create_menu ();
