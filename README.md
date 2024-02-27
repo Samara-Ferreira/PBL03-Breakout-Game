@@ -31,6 +31,7 @@ Os requisitos para elaboração do sistema são apresentados a seguir:
 	<ul>
         <li><a href="#equipamentos">  Descrição dos Equipamentos e Software Utilizados</a></li>
         <li><a href="#arq_CPU">  Arquitetura da placa DE1-SoC</a></li>
+        <li><a href="#Perifericos-utilizados"> Periféricos da placa DE1-SoC utilizados </a></li>
         <li><a href="#Drives"> Drives de Dispositivos de Entrada e Saída (I/O) </a></li>
         <li><a href="#Inteface-Grafica"> Interface do Usuário </a></li>
         <li><a href="#Regras-de-jogo"> Dinâmica e Regras de Jogo </a></li>
@@ -89,6 +90,39 @@ A porta JTAG implementa um link de comunicação entre a placa DE1-SoC e seu com
 O processo de compilação nativa ocorre quando um programa é compilado em um sistema para rodar na mesma arquitetura do próprio sistema. Neste caso, vamos compilar nativamente um programa por meio da interface de linha de comando do Linux, usando sua cadeia de ferramentas de compilação integrada. O comando gcc invoca o GNU C Compiler, um compilador de código aberto amplamente usado para compilar programas Linux.
 
 </div>
+</div>
+
+<div id="Perifericos-utilizados"> 
+<h2> Periféricos da placa DE1-SoC utilizados</h2>
+<div align="justify">
+
+A seguir, serão feitas as descrições gerais dos periféricos utilizados da placa DE1-SoC e seus aspectos mais importantes. 
+
+* **Porta de saída de vídeo**
+
+A placa possui uma porta de saída de vídeo com um controlador VGA, que pode ser conectado a um monitor do padrão VGA. A informações podem ser transmitidas de duas fontes: um buffer de pixels e um buffer de caracteres. O buffer de caracteres tem a função de especificar caracteres de texto que devem ser exibidos no monitor e, como não foi utilizado no sistema, ele não será focado nesse tópico. 
+
+As imagens exibidas no monitor tiveram como fonte o buffer de pixels. Ele contém os dados de cor de cada pixel transmitido pelo controlador VGA. Esse controlador suporta uma resolução de 640 x 480, porém, o buffer de pixels só fornece uma resolução de imagem de 320 x 240, por isso, cada valor de pixel é duplicado nas duas dimensões. 
+
+Cada pixel contém um conjunto de bits que são distribuídos entre as cores: vermelho, azul e verde. Uma imagem pode ser criada escrevendo os valores das cores no endereço do pixel especificado. O controlador do buffer de pixels lê os dados da memória e envia para o monitor VGA. 
+
+Com o objetivo de conseguir modificar o buffer de pixels sem alterar a imagem transmitida, a placa utiliza um sistema de "double buffer". Nesse esquema, existem dois espaços de armazenamento dos dados dos pixels, um que é transmitido para a tela VGA, chamado de "front buffer", e outro que não está sendo transmitido, mas pode ser modificado, chamado de "back buffer". 
+
+Cada vez que os dados dos pixels devem ser modificados, o usuário escreve no "back buffer" e quando quiser enviar esses dados para a tela VGA, é feita uma troca de buffers. Essa troca coloca o "back buffer" na frente e o "front buffer" atrás, assim, esse ciclo continua para se fazer o dinamismo das imagens exibidas. Porém, todos os pixels só são atualizados na tela com a frequência de 60 Hz, não podendo usar uma velocidade de troca de buffer superior a essa. 
+
+* **Acelerômetro ADXL345**
+
+O acelerômetro ADXL345 é um leitor de aceleração em intervalos regulares nos três eixos. Sua escala pode ser calibrada, porém, o seu intervalo de leitura máximo está entre -16g a 16g, sendo g, o valor de 9.81 metros por segundo ao quadrado. 
+
+Esse dispositivo está embutido na placa, portanto os movimentos feitos com a placa, ou sua posição em relação a direção da gravidade, retornam determinadas medidas de aceleração. Sua utilização consiste em ler esses dados de aceleração retornados dos três eixos: x, y e z.  
+
+* **Botões**
+
+A placa disponibiliza quatro botões para utilização. Os dados de leitura dos botões são armazenados em um registrador de dados, com seus quatro bits menos significativos representando cada um dos botões. Quando um botão é pressionado, o seu respectivo bit é setado para 1, e quando é solto, para 0.
+
+Existem outros dois registradores, o "interruptmask" e o "edgecapture". Esses registradores possuem um bit para cada botão, como o registrador de dados, porém, com funções diferentes. O "interruptmask" pode habilitar interrupções para cada botão, setando o seu respectivo bit para 1. O "edgecapture" seta o bit para 1 quando o botão é pressionado, e permanece nesse valor até que seja zerado diretamente. Setar um bit do "edgecapture" para 0 pode ser feito escrevendo o valor 1.
+
+
 </div>
 
 <div id="Drives"> 
