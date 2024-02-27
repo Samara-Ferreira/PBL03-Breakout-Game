@@ -605,12 +605,17 @@ Compile e execute o código usando o comando:
 
 CAMACHO, Karla (2023). Breakout. Disponível em: https://pop.proddigital.com.br/consoles/breakout. Acessado em: 24 de fevereiro de 2024.
 
-* Acelerômetro
-  * https://docplayer.net/55053139-Using-the-accelerometer-on-de-soc-boards-1-introduction-for-quartus-prime-16-1.html
+RIBEIRO, Cristiano (2018). Avaliação de algoritmos de detecção de
+colisão em jogos 2D para Android. Disponível em: https://dspace.unipampa.edu.br/bitstream/riu/3328/1/Cristiano%20Daitx%20Ribeiro%202018.pdf. Acessado em: 27 de fevereiro de 2024.
 
-* Porta de saída de vídeo
+BARREIROS, Emanoel. Colisões entre retângulos e círculos. Disponível em: https://emanoelbarreiros.github.io/game/colisao_circ_rect/. Acessado em: 27 de fevereiro de 2024.
 
-* Botões
+Introduction to the ARM Cortex-A9 Processor. Disponível em: https://github.com/fpgacademy/Tutorials/releases/download/v21.1/ARM_intro_intelfpga.pdf. Acessado em: 27 de fevereiro de 2024.
 
-* Módulos de núcleo
-  * https://fpgacademy.org/Downloads/DE1-SoC_Computer_ARM.pdf 
+Using the ARM Generic Interrupt Controller. Disponível em: https://github.com/fpgacademy/Tutorials/releases/download/v21.1/ARM_GIC.pdf. Acessado em: 27 de fevereiro de 2024.
+
+Using ROS* on DE-Series Boards. Disponível em: https://github.com/fpgacademy/Tutorials/releases/download/v21.1/ROS.pdf. Acessado em: 27 de fevereiro de 2024.
+
+Using the Accelerometer on DE-Series Boards. Disponível em: https://github.com/fpgacademy/Tutorials/releases/download/v21.1/Accelerometer.pdf. Acessado em: 27 de fevereiro de 2024.
+
+Accessing HPS Devices from the FPGA. Disponível em: https://github.com/fpgacademy/Tutorials/releases/download/v21.1/Accessing_Hard_Processor_System.pdf. Acessado em: 27 de fevereiro de 2024.
