@@ -48,6 +48,7 @@ Os requisitos para elaboração do sistema são apresentados a seguir:
 <h2> Descrição dos Equipamentos e Software Utilizados</h2>
 <div align="justify"> 
 
+
 </div>
 </div>
 
@@ -497,6 +498,15 @@ Para uma compreensão mais clara da explicação, apresentamos abaixo um fluxogr
 <div id="conclusao"> 
 <h2> Conclusão </h2>
 <div align="justify">
+
+A implementação do jogo inspirado no clássico Breakout, por meio do código em linguagem C no kit de desenvolvimento DE1-SoC, demonstrou ser uma experiência interativa e envolvente para os jogadores. Durante o processo de desenvolvimento, foram atendidos todos os requisitos estabelecidos, utilizando a arquitetura da placa e seus drivers como base sólida para a criação do jogo e implementação dos algoritmos necessários.
+
+A interação harmoniosa entre o software e o hardware, possibilitada pela placa, permitiu a utilização integrada dos periféricos VGA, acelerômetro e botões, contribuindo para uma experiência de jogo mais imersiva. Os testes realizados evidenciaram a eficiência e confiabilidade do sistema, validando sua capacidade de operar de forma consistente em diversas condições de jogo.
+
+Este projeto, além de alcançar seus objetivos iniciais, proporcionou um aprofundamento significativo dos conhecimentos em sistemas embarcados e arquitetura ARM. Ele capacitou os desenvolvedores a conciliar aspectos tanto de software quanto de hardware, estabelecendo uma base sólida para futuras explorações nas áreas de sistemas digitais e desenvolvimento de software.
+
+</div>
+</div>
 
 <div id="execucaoProjeto"> 
 <h2> Execução do Projeto  </h2>
