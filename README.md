@@ -7,14 +7,14 @@
 
 Atualmente, a Apple é uma das maiores empresas de desenvolvimento e inovação tecnológica, com suas produções conhecidas de dispositivos móveis e computadores pessoais. Dois dos seus principais fundadores foram Steve Jobs e Wozniak, um inventor e um engenheiro que moldaram uma geração de jogos eletrônicos na década de 70 com a criação do jogo de arcade Breakout. 
 
-Este projeto tem o intuito de desenvolver um jogo inspirado no Breakout. É utilizada a placa FPGA DE1-SoC para executar o sistema e disponibilizar a interface de controle ao usuário. Um acelerômetro imbutido na placa permite captar a movimentação pretendida pelo usuário. Botões são utilizados para executar comandos no jogo. E os dados de imagem são transmitidos por um cabo VGA para um monitor CRT, sendo ele, o dispositivo que fará a exibição das telas ao usuário. 
+Este projeto tem o intuito de desenvolver um jogo inspirado no Breakout. É utilizada a placa FPGA DE1-SoC para executar o sistema e disponibilizar a interface de controle ao usuário. Um acelerômetro embutido na placa permite captar a movimentação pretendida pelo usuário. Botões são utilizados para executar comandos no jogo. E os dados de imagem são transmitidos por um cabo VGA para um monitor CRT, sendo ele, o dispositivo que fará a exibição das telas ao usuário. 
 
 Os requisitos para elaboração do sistema são apresentados a seguir:
 
 * O código carregado na DE1-SoC deve ser feito em linguagem C;
 * Um acelerômetro deve captar a movimentação feita na placa para alterar a posição da barra que irá colidir com a bola;
 * Os botões devem ser utilizados para executar comandos no jogo;
-* Os dados de imagem devem ser transmitidos de um cabo VGA para um monitor CRT;
+* Os dados de imagem devem ser transmitidos de um cabo VGA para um monitor CRT.
 
 </div>
 
@@ -31,8 +31,8 @@ Os requisitos para elaboração do sistema são apresentados a seguir:
 	<ul>
         <li><a href="#equipamentos">  Descrição dos Equipamentos e Software Utilizados</a></li>
         <li><a href="#arq_CPU">  Arquitetura da placa DE1-SoC</a></li>
-        <li><a href="#Perifericos-utilizados"> Periféricos da placa DE1-SoC utilizados </a></li>
-        <li><a href="#Drives"> Drives de Dispositivos de Entrada e Saída (I/O) </a></li>
+        <li><a href="#Perifericos-utilizados"> Periféricos da Placa DE1-SoC Utilizados </a></li>
+        <li><a href="#Drives"> Drives de Dispositivos de Entrada e Saída (E/S) </a></li>
         <li><a href="#Inteface-Grafica"> Interface do Usuário </a></li>
         <li><a href="#Regras-de-jogo"> Dinâmica e Regras de Jogo </a></li>
         <li><a href="#Algoritmos"> Algoritmos de Jogo </a></li>
@@ -56,7 +56,7 @@ Os requisitos para elaboração do sistema são apresentados a seguir:
 <h2> Arquitetura da placa DE1-SoC</h2>
 <div align="justify">
 
-Nesta seção, será explorado a arquitetura da placa DE1-SoC, incluindo o processador ARM Cortex-A9, a estrutura de registros, o mapeamento de dispositivos de entrada/saída na memória, a memória utilizada, a comunicação entre o processador e o FPGA, e o processo de compilação nativa na placa
+Nesta seção, será explorado a arquitetura da placa DE1-SoC, incluindo o processador ARM Cortex-A9, a estrutura de registros, o mapeamento de dispositivos de entrada/saída na memória, a memória utilizada, a comunicação entre o processador e a FPGA, e o processo de compilação nativa na placa.
 
 <h3>Visão Geral dos Recursos do Processador ARM Cortex-A9 </h3>
 
@@ -111,14 +111,14 @@ O processo de compilação nativa ocorre quando um programa é compilado em um s
 </div>
 
 <div id="Perifericos-utilizados"> 
-<h2> Periféricos da placa DE1-SoC utilizados</h2>
+<h2> Periféricos da Placa DE1-SoC Utilizados </h2>
 <div align="justify">
 
 A seguir, serão feitas as descrições gerais dos periféricos utilizados da placa DE1-SoC e seus aspectos mais importantes. 
 
-<h3>Porta de saída de vídeo</h3>
+<h3>Porta de Saída de Vídeo</h3>
 
-A placa possui uma porta de saída de vídeo com um controlador VGA, que pode ser conectado a um monitor do padrão VGA. A informações podem ser transmitidas de duas fontes: um buffer de pixels e um buffer de caracteres. O buffer de caracteres tem a função de especificar caracteres de texto que devem ser exibidos no monitor e, como não foi utilizado no sistema, ele não será focado nesse tópico. 
+A placa possui uma porta de saída de vídeo com um controlador VGA, que pode ser conectado a um monitor do padrão VGA. As informações podem ser transmitidas de duas fontes: um buffer de pixels e um buffer de caracteres. O buffer de caracteres tem a função de especificar caracteres de texto que devem ser exibidos no monitor e, como não foi utilizado no sistema, ele não será focado nesse tópico. 
 
 As imagens exibidas no monitor tiveram como fonte o buffer de pixels. Ele contém os dados de cor de cada pixel transmitido pelo controlador VGA. Esse controlador suporta uma resolução de 640 x 480, porém, o buffer de pixels só fornece uma resolução de imagem de 320 x 240, por isso, cada valor de pixel é duplicado nas duas dimensões. 
 
@@ -132,7 +132,7 @@ Cada vez que os dados dos pixels devem ser modificados, o usuário escreve no "b
 
 O acelerômetro ADXL345 é um leitor de aceleração em intervalos regulares nos três eixos. Sua escala pode ser calibrada, porém, o seu intervalo de leitura máximo está entre -16g a 16g, sendo g, o valor de 9.81 metros por segundo ao quadrado. 
 
-Esse dispositivo está embutido na placa e sua comunicação é feita pelo protocolo, de comunicação serial, I2C. É feita a conexão do acelerômetro com o controlador dessa comunicação para poder ler os dados e configurar a transmissão.
+Esse dispositivo está embutido na placa e sua comunicação é feita pelo protocolo de comunicação serial, I2C. É feita a conexão do acelerômetro com o controlador dessa comunicação para poder ler os dados e configurar a transmissão.
 
 Os movimentos feitos com a placa, ou sua posição em relação a direção da gravidade, retornam determinadas medidas de aceleração. Sua utilização consiste em ler esses dados de aceleração retornados dos três eixos: x, y e z.  
 
@@ -145,7 +145,7 @@ Existem outros dois registradores, o "interruptmask" e o "edgecapture". Esses re
 </div>
 
 <div id="Drives"> 
-<h2> Drives de Dispositivos de Entrada e Saída (I/O)</h2>
+<h2> Drives de Dispositivos de Entrada e Saída (E/S)</h2>
 <div align="justify">
 
 Para realizar a comunicação com os dispositivos periféricos de hardware, é preciso utilizar programas de software, chamados de drivers, que vão disponibilizar a interface necessária para executar comandos nesses dispositivos. Os tipos de drivers utilizados foram os módulos de núcleo, sendo eles, módulos que podem ser adicionados ao núcleo na execução do programa.
