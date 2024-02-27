@@ -48,6 +48,27 @@ Os requisitos para elaboração do sistema são apresentados a seguir:
 <h2> Descrição dos Equipamentos e Software Utilizados</h2>
 <div align="justify"> 
 
+Nesta seção, são apresentados os equipamentos e software utilizados durante o desenvolvimento do projeto.
+
+<h3> o kit de desenvolvimento DE1-SoC</h3>
+
+A placa DE1-SoC é um kit de desenvolvimento que combina um processador ARM Cortex-A9 dual-core com um FPGA Cyclone V da Intel. Essa placa oferece uma ampla gama de periféricos, incluindo porta VGA, porta Ethernet, USB, porta de áudio, entre outros, o que a torna ideal para projetos que envolvem tanto software quanto hardware. Ela é frequentemente utilizada em ambientes educacionais e de pesquisa para o desenvolvimento e aprendizado em sistemas embarcados e FPGA.
+
+<h3> Monitor CRT</h3>
+
+O monitor utilizado no projeto foi o DELL M782p, um modelo CRT. Esse tipo de monitor utiliza um tubo de raios catódicos (CRT) para exibir imagens. O DELL M782p possui uma tela de visualização de 17 polegadas e uma resolução máxima de 1280x1024 pixels. Ele oferece uma interface VGA para conexão com o computador ou placa de desenvolvimento. O monitor CRT é conhecido por sua reprodução de cores vibrantes e tempos de resposta rápidos, sendo uma escolha adequada para projetos que exigem interação em tempo real, como jogos e simulações.
+
+<h3> Linguagem C</h3>
+
+A linguagem C foi escolhida devido à sua eficiência, portabilidade e ampla utilização em sistemas embarcados. Sua sintaxe simples permite controle preciso sobre o hardware, enquanto suas bibliotecas padrão e ferramentas facilitam o desenvolvimento de código compacto e otimizado para dispositivos com recursos limitados.
+
+<h3> Compilador GNU</h3>
+
+O GCC, abreviação para "GNU Compiler Collection" (Coleção de Compiladores GNU), é uma distribuição integrada de compiladores amplamente utilizada que suporta várias linguagens de programação, incluindo C, C++, Objective-C, Fortran, Ada, entre outras. Ao ser invocado, o GCC passa por etapas de pré-processamento, compilação, montagem e vinculação. Oferece uma ampla gama de opções de linha de comando para personalização, facilitando a configuração de acordo com as necessidades específicas do desenvolvedor.
+
+<h3>Vscode</h3>
+
+O Visual Studio Code, conhecido como VSCode, é um ambiente de desenvolvimento amplamente usado. Desenvolvido pela Microsoft, é um editor de código gratuito e de código aberto com recursos como realce de sintaxe, conclusão de código e depuração integrada. Suporta várias linguagens e possui extensões para personalização. No projeto ele foi utilizado para desenvolver o código fonte do jogo.
 
 </div>
 </div>
