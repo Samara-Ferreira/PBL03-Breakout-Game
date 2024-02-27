@@ -117,7 +117,7 @@ Os dispositivos de entrada/saída acessíveis pelo processador ARM são mapeados
 
 <h3>Interrupções de Hardware</h3>
 
-As interrupções de hardware podem ser geradas por dispositivos de E/S, ativando as entradas de solicitação de interrupção do processador (IRQ ou FIQ). Quando ocorre uma interrupção, o processador entra no modo de exceção correspondente e salva o estado atual do programa. O endereço salvo no registrador de link deve ser decrementado em 4 antes de retornar ao programa interrompido. Isso pode ser feito manualmente ou usando um comando de subtração no código de exceção de interrupção.
+As interrupções de hardware podem ser geradas por dispositivos de E/S, ativando as entradas de solicitação de interrupção do processador (IRQ ou FIQ). Quando ocorre uma interrupção, o processador entra no modo de exceção correspondente e salva o estado atual do programa. O endereço salvo no registrador de link deve ser decrementado em 4 antes de retornar ao programa interrompido.
 
 <h3>Diagrama de Blocos do Sistema DE1-SoC</h3>
 
@@ -146,6 +146,11 @@ O processo de compilação nativa ocorre quando um programa é compilado em um s
 <div align="justify">
 
 A seguir, serão feitas as descrições gerais dos periféricos utilizados da placa DE1-SoC e seus aspectos mais importantes. 
+
+<p align="center">
+  <img src="Images/BoardLayout.png" width = "600" />
+</p>
+<p align="center"><strong> Layout dos periféricos da placa</strong></p>
 
 <h3>Porta de Saída de Vídeo</h3>
 
@@ -322,11 +327,11 @@ Quando a bolinha colide com algum objeto no cenário, como paredes laterais, sup
 Analisando as diferentes colisões com cada objeto do cenário, temos as seguintes características:
 
 
-<h4> Colisão com a Prancha </h4>
+<h4> Colisão com a Barra </h4>
 
- Durante a colisão com a prancha, a bolinha pode refletir-se em três direções distintas, dependendo do ponto de impacto na prancha. A prancha é dividida em três partes: direita, esquerda e centro. Quando a bolinha atinge a parte direita da prancha, ela é refletida para a direita; quando atinge a parte esquerda, é refletida para a esquerda; e quando atinge o centro, ocorre uma reflexão perfeita.
+ Durante a colisão com a barra, a bolinha pode refletir-se em três direções distintas, dependendo do ponto de impacto. A barra é dividida em três partes: direita, esquerda e centro. Quando a bolinha atinge a parte direita da barra, ela é refletida para a direita; quando atinge a parte esquerda, é refletida para a esquerda; e quando atinge o centro, ocorre uma reflexão perfeita.
  
- Além disso, após a colisão, tanto o ângulo quanto a velocidade da bolinha são alterados. Cada lado da prancha oferece quatro velocidades diferentes e ângulos distintos de reflexão, o que adiciona variedade e desafio ao jogo.
+ Além disso, após a colisão, tanto o ângulo quanto a velocidade da bolinha são alterados. Cada lado da barra oferece quatro velocidades diferentes e ângulos distintos de reflexão, o que adiciona variedade e desafio ao jogo.
 
 Para visualizar essas colisões, são disponibilizadas duas imagens anexas. A primeira imagem ilustra a mudança de direção da bolinha apenas no eixo y, alterando seu ângulo a partir do ponto de colisão. Já a segunda imagem mostra a inversão nos eixos x e y, proporcionando uma mudança significativa na trajetória da bolinha.
 
