@@ -77,7 +77,7 @@ O Visual Studio Code, conhecido como VSCode, é um ambiente de desenvolvimento a
 <h2> Arquitetura da placa DE1-SoC</h2>
 <div align="justify">
 
-Nesta seção, será explorado a arquitetura da placa DE1-SoC, incluindo o processador ARM Cortex-A9, a estrutura de registros, o mapeamento de dispositivos de entrada/saída na memória, a memória utilizada, a comunicação entre o processador e a FPGA, e o processo de compilação nativa na placa.
+Nesta seção, será explorado a arquitetura da placa DE1-SoC, incluindo o processador ARM Cortex-A9, a estrutura de registros, o mapeamento de dispositivos de entrada/saída na memória, a memória utilizada, a comunicação entre o processador e o FPGA, e o processo de compilação nativa na placa.
 
 <h3>Visão Geral dos Recursos do Processador ARM Cortex-A9 </h3>
 
@@ -173,7 +173,7 @@ Para realizar a comunicação com os dispositivos periféricos de hardware, é p
 
 A distribuição de Linux do DE1-SoC-UP disponibiliza módulos de núcleo prontos para realizar essa comunicação. Na linguagem C, esses módulos podem ser acessados adicionando na compilação do programa o comando "-lintelfpgaup", e no código, a declaração "#include <intelfpgaup/xxx.h>", sendo "xxx", o nome do driver utilizado. A seguir, serão descritas as funções pertinentes dos módulos de núcleo utilizados.
 
-<h3> Porta de saída de vídeo </h3>
+<h3> Porta de Saída de Vídeo </h3>
 
 Módulo indicado pelo nome "video". As funções utilizadas são:
 
@@ -197,7 +197,7 @@ Módulo indicado pelo nome "accel". As funções utilizadas são:
 Módulo indicado pelo nome "KEYS". As funções utilizadas são:
 
 * KEY_open: Abre o dispositivo dos botões;
-* KEY_read: Lê os dados os botões. É passado como parâmetro um ponteiro que irá setar os sinais retornados dos botões no endereço indicado. Os sinais coletados não representam o estado atual dos botões, mas, sim, se eles foram pressionados antes da última leitura. Portanto é preciso liberar os resquícios de dados antes de iniciar a lógica do sistema.
+* KEY_read: Lê os dados dos botões. É passado como parâmetro um ponteiro que irá setar os sinais retornados dos botões no endereço indicado. Os sinais coletados não representam o estado atual dos botões, mas, sim, se eles foram pressionados antes da última leitura. Portanto é preciso liberar os resquícios de dados antes de iniciar a lógica do sistema.
 
 </div>
 
@@ -264,7 +264,7 @@ Caso todos os blocos sejam destruídos, a partida foi ganha. Na tela de vitória
 <p align="center">
   <img src="Images/interface_grafica_9.png" width = "600" />
 </p>
-<p align="center"><strong>Transição da partida para tela de vitória</strong></p>
+<p align="center"><strong>Transição da partida para a tela de vitória</strong></p>
 
 A tela de vitória possui uma animação contínua de fogos de artifício. Quando chegam em certa altura, os fogos explodem e exibem os traços das explosões. Os fogos continuam surgindo, um por um, enquanto o usuário estiver na tela de vitória.
 
