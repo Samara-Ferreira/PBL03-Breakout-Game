@@ -77,6 +77,10 @@ O HPS inclui uma porta de memória que conecta o ARM MPCORE a uma memória DDR3 
 
 Os dispositivos de entrada/saída acessíveis pelo processador ARM são mapeados na memória e podem ser acessados como locais de memória, utilizando instruções Load e Store.
 
+<h3>Interrupções de Hardware</h3>
+
+As interrupções de hardware podem ser geradas por dispositivos de E/S, ativando as entradas de solicitação de interrupção do processador (IRQ ou FIQ). Quando ocorre uma interrupção, o processador entra no modo de exceção correspondente e salva o estado atual do programa. O endereço salvo no registrador de link deve ser decrementado em 4 antes de retornar ao programa interrompido. Isso pode ser feito manualmente ou usando um comando de subtração no código de exceção de interrupção.
+
 <h3>Diagrama de Blocos do Sistema DE1-SoC</h3>
 
 O sistema DE1-SoC é composto pelo Hard Processor System (HPS) e FPGA dentro do chip Cyclone V SoC. O HPS inclui um processador dual-core ARM Cortex-A9, uma porta de memória DDR3 e dispositivos periféricos. O FPGA implementa dois processadores Intel Nios II e várias portas periféricas.
