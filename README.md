@@ -97,7 +97,6 @@ O sistema DE1-SoC é composto pelo Hard Processor System (HPS) e FPGA dentro do 
 </p>
 <p align="center"><strong>Diagrama da arquitetura da placa DE1-SoC</strong></p>
 
-<h3>Instruções e Conjunto Thumb</h3>
 
 <h3>Comunicação entre Processador e FPGA via JTAG</h3>
 
