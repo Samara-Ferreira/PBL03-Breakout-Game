@@ -145,7 +145,7 @@ O processo de compilação nativa ocorre quando um programa é compilado em um s
 <h2> Periféricos da Placa DE1-SoC Utilizados </h2>
 <div align="justify">
 
-A seguir, serão feitas as descrições gerais dos periféricos utilizados da placa DE1-SoC e seus aspectos mais importantes. 
+A seguir, serão feitas as descrições gerais dos periféricos utilizados da placa DE1-SoC e seus aspectos mais importantes. A Figura abaixo mostra a placa FPGA, com as indicações dos seus dispositivos que serão citados.                        
 
 <p align="center">
   <img src="Images/BoardLayout.png" width = "600" />
@@ -219,6 +219,8 @@ Módulo indicado pelo nome "KEYS". As funções utilizadas são:
 <div id="Inteface-Grafica"> 
 <h2> Interface do Usuário </h2>
 <div align="justify">
+
+A seguir, a interface exibida para o usuário no monitor VGA e as suas possíveis transições, juntamente com os cenários em que o uso dos botões interfere no estado do jogo.
 
 O jogo se inicia com a tela inicial mostrada abaixo. Ela exibe o título do jogo e a opção de iniciar a partida, sendo ela, a única opção disponível. Caso o quarto botão da placa seja pressionado, a partida se inicia. 
 
@@ -488,6 +490,8 @@ Para uma compreensão mais clara da explicação, apresentamos abaixo um fluxogr
 <div id="testes"> 
 <h2> Testes Realizados </h2>
 <div align="justify">
+
+A seguir, os testes realizados para assegurar o bom funcionamento do sistema.
 
 * Transição da tela inicial para a partida.
 
