@@ -65,6 +65,11 @@ O processador ARM Cortex-A9 utiliza uma arquitetura de conjunto de instruções 
 
 O processador ARM Cortex-A9 possui 15 registros de uso geral (R0 a R14), um contador de programa (R15) e um registro de status de programa atual, CPSR, todos com 32 bits. Dois registros são tratados de maneira especial: R13 é o Stack Pointer e R14 é um registro de link na ligação de sub-rotina.
 
+<p align="center">
+  <img src="Images/reg.png" width = "500" />
+</p>
+<p align="center"><strong>Registradores disponíveis e sua organização interna</strong></p>
+
 <h3>Instruções e Conjunto Thumb</h3>
 
 As instruções têm 32 bits e são armazenadas na memória alinhadas por palavras. O conjunto Thumb oferece uma versão menor com instruções de 16 bits, resultando em requisitos menores de memória, úteis em aplicativos incorporados.
@@ -77,6 +82,7 @@ O HPS inclui uma porta de memória que conecta o ARM MPCORE a uma memória DDR3 
 
 Os dispositivos de entrada/saída acessíveis pelo processador ARM são mapeados na memória e podem ser acessados como locais de memória, utilizando instruções Load e Store.
 
+
 <h3>Interrupções de Hardware</h3>
 
 As interrupções de hardware podem ser geradas por dispositivos de E/S, ativando as entradas de solicitação de interrupção do processador (IRQ ou FIQ). Quando ocorre uma interrupção, o processador entra no modo de exceção correspondente e salva o estado atual do programa. O endereço salvo no registrador de link deve ser decrementado em 4 antes de retornar ao programa interrompido. Isso pode ser feito manualmente ou usando um comando de subtração no código de exceção de interrupção.
@@ -84,6 +90,14 @@ As interrupções de hardware podem ser geradas por dispositivos de E/S, ativand
 <h3>Diagrama de Blocos do Sistema DE1-SoC</h3>
 
 O sistema DE1-SoC é composto pelo Hard Processor System (HPS) e FPGA dentro do chip Cyclone V SoC. O HPS inclui um processador dual-core ARM Cortex-A9, uma porta de memória DDR3 e dispositivos periféricos. O FPGA implementa dois processadores Intel Nios II e várias portas periféricas.
+
+
+<p align="center">
+  <img src="Images/Diagrama-em-blocos.png" width = "500" />
+</p>
+<p align="center"><strong>Diagrama da arquitetura da placa DE1-SoC</strong></p>
+
+<h3>Instruções e Conjunto Thumb</h3>
 
 <h3>Comunicação entre Processador e FPGA via JTAG</h3>
 
