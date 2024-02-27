@@ -115,7 +115,7 @@ O processo de compilação nativa ocorre quando um programa é compilado em um s
 
 A seguir, serão feitas as descrições gerais dos periféricos utilizados da placa DE1-SoC e seus aspectos mais importantes. 
 
-* **Porta de saída de vídeo**
+<h3>Porta de saída de vídeo</h3>
 
 A placa possui uma porta de saída de vídeo com um controlador VGA, que pode ser conectado a um monitor do padrão VGA. A informações podem ser transmitidas de duas fontes: um buffer de pixels e um buffer de caracteres. O buffer de caracteres tem a função de especificar caracteres de texto que devem ser exibidos no monitor e, como não foi utilizado no sistema, ele não será focado nesse tópico. 
 
@@ -127,18 +127,19 @@ Com o objetivo de conseguir modificar o buffer de pixels sem alterar a imagem tr
 
 Cada vez que os dados dos pixels devem ser modificados, o usuário escreve no "back buffer" e quando quiser enviar esses dados para a tela VGA, é feita uma troca de buffers. Essa troca coloca o "back buffer" na frente e o "front buffer" atrás, assim, esse ciclo continua para se fazer o dinamismo das imagens exibidas. Porém, todos os pixels só são atualizados na tela com a frequência de 60 Hz, não podendo usar uma velocidade de troca de buffer superior a essa. 
 
-* **Acelerômetro ADXL345**
+<h3>Acelerômetro ADXL345</h3>
 
 O acelerômetro ADXL345 é um leitor de aceleração em intervalos regulares nos três eixos. Sua escala pode ser calibrada, porém, o seu intervalo de leitura máximo está entre -16g a 16g, sendo g, o valor de 9.81 metros por segundo ao quadrado. 
 
-Esse dispositivo está embutido na placa, portanto os movimentos feitos com a placa, ou sua posição em relação a direção da gravidade, retornam determinadas medidas de aceleração. Sua utilização consiste em ler esses dados de aceleração retornados dos três eixos: x, y e z.  
+Esse dispositivo está embutido na placa e sua comunicação é feita pelo protocolo, de comunicação serial, I2C. É feita a conexão do acelerômetro com o controlador dessa comunicação para poder ler os dados e configurar a transmissão.
 
-* **Botões**
+Os movimentos feitos com a placa, ou sua posição em relação a direção da gravidade, retornam determinadas medidas de aceleração. Sua utilização consiste em ler esses dados de aceleração retornados dos três eixos: x, y e z.  
+
+<h3>Botões</h3>
 
 A placa disponibiliza quatro botões para utilização. Os dados de leitura dos botões são armazenados em um registrador de dados, com seus quatro bits menos significativos representando cada um dos botões. Quando um botão é pressionado, o seu respectivo bit é setado para 1, e quando é solto, para 0.
 
 Existem outros dois registradores, o "interruptmask" e o "edgecapture". Esses registradores possuem um bit para cada botão, como o registrador de dados, porém, com funções diferentes. O "interruptmask" pode habilitar interrupções para cada botão, setando o seu respectivo bit para 1. O "edgecapture" seta o bit para 1 quando o botão é pressionado, e permanece nesse valor até que seja zerado diretamente. Setar um bit do "edgecapture" para 0 pode ser feito escrevendo o valor 1.
-
 
 </div>
 
@@ -146,7 +147,8 @@ Existem outros dois registradores, o "interruptmask" e o "edgecapture". Esses re
 <h2> Drives de Dispositivos de Entrada e Saída (I/O)</h2>
 <div align="justify">
 
-</div>
+
+
 </div>
 
 <div id="Inteface-Grafica"> 
