@@ -66,7 +66,7 @@ O processador ARM Cortex-A9 utiliza uma arquitetura de conjunto de instruções 
 O processador ARM Cortex-A9 possui 15 registros de uso geral (R0 a R14), um contador de programa (R15) e um registro de status de programa atual, CPSR, todos com 32 bits. Dois registros são tratados de maneira especial: R13 é o Stack Pointer e R14 é um registro de link na ligação de sub-rotina.
 
 <p align="center">
-  <img src="Images/reg.png" width = "500" />
+  <img src="Images/reg.png" width = "600" />
 </p>
 <p align="center"><strong>Registradores disponíveis e sua organização interna</strong></p>
 
@@ -93,7 +93,7 @@ O sistema DE1-SoC é composto pelo Hard Processor System (HPS) e FPGA dentro do 
 
 
 <p align="center">
-  <img src="Images/Diagrama-em-blocos.png" width = "500" />
+  <img src="Images/Diagrama-em-blocos.png" width = "600" />
 </p>
 <p align="center"><strong>Diagrama da arquitetura da placa DE1-SoC</strong></p>
 
