@@ -268,15 +268,39 @@ A lógica do algoritmo baseia-se em comparar um círculo com certo  raio ligeira
 
 Em seguida, é calculada a distância euclidiana entre a bola e o ponto de impacto utilizando o teorema de Pitágoras, e esse valor é arredondado, já que o jogo é em pixels. Se a distância calculada for menor ou igual ao raio da bola, significa que ocorreu uma colisão, e o algoritmo retorna 1. Caso contrário, retorna 0 para indicar que não houve colisão.
 
+A imagem apresenta um fluxograma do algoritmo, proporcionando uma visão do seu funcionamento. Além disso, fornece uma representação cartesiana para uma compreensão visual mais abrangente.
+
+<p align="center">
+  <img src="Images/Fruxograma-Colisoes.png" width = "600" />
+</p>
+<p align="center"><strong> Fluxograma e visão cartesiana da detecção de colisão entre retângulo e círculo</strong></p>
+
 <h3> Algoritmo de Verificação Contínua </h3>
 
 Em simulações físicas, a verificação de colisões é um processo contínuo e crucial para garantir a precisão e a fidelidade da simulação. Enquanto a abordagem discreta atualiza a posição dos objetos em intervalos fixos de tempo, a verificação contínua de colisões é mais precisa, evitando problemas como o "efeito de túnel".
 
 No contexto deste projeto, o algoritmo de verificação contínua de colisões é implementado para garantir que as colisões sejam detectadas entre cada intervalo de tempo, mesmo em movimentos rápidos ou objetos pequenos.
 
+<p align="center">
+  <img src="Images/Verificacao-continua.png" width = "600" />
+</p>
+<p align="center"><strong> Modelo discreto e contínuo de verificação de colisão</strong></p>
+
 O algoritmo de verificação contínua de colisões funciona da seguinte maneira: a partir de um número pré-definido de pontos intermediários entre a posição atual da bola e sua próxima posição, o algoritmo verifica se ocorrerá alguma colisão em cada ponto. Isso é feito ao calcular as coordenadas da bola em cada ponto intermediário e verificar se houve colisão com outros objetos do cenário.
 
 Se uma colisão é detectada em algum ponto intermediário, a bola é movida para a posição onde ocorreu a colisão, e o tipo de colisão é informado para que a reflexão adequada seja realizada na próxima interação. Por outro lado, se nenhum ponto intermediário apresentar colisão, a bola realiza um movimento normal entre os quadros, sem nenhuma reflexão.
+
+Segue uma versão simplificada para facilitar o entendimento do algoritmo: um gráfico de tempo e espaço que ilustra os testes realizados para 10 pontos intermediários em uma velocidade de 8 pixels por quadro, juntamente com uma versão do fluxograma do algoritmo.
+
+<p align="center">
+  <img src="Images/grafico-do-deslocamento.png" width = "400" />
+</p>
+<p align="center"><strong> Modelo discreto e contínuo de verificação de colisão</strong></p>
+
+<p align="center">
+  <img src="Images/Fluxograma-MOV-Ball.png" width = "600" />
+</p>
+<p align="center"><strong> Modelo discreto e contínuo de verificação de colisão</strong></p>
 
 </div>
 </div>
