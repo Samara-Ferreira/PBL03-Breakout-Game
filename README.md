@@ -54,9 +54,19 @@ Nesta seção, são apresentados os equipamentos e software utilizados durante o
 
 A placa DE1-SoC é um kit de desenvolvimento que combina um processador ARM Cortex-A9 dual-core com um FPGA Cyclone V da Intel. Essa placa oferece uma ampla gama de periféricos, incluindo porta VGA, porta Ethernet, USB, porta de áudio, entre outros, o que a torna ideal para projetos que envolvem tanto software quanto hardware. Ela é frequentemente utilizada em ambientes educacionais e de pesquisa para o desenvolvimento e aprendizado em sistemas embarcados e FPGA.
 
+<p align="center">
+  <img src="Images/DE1-SoC_top45_01.jpg" width = "400" />
+</p>
+<p align="center"><strong>Kit de desenvolvimento DE1-SoC</strong></p>
+
 <h3> Monitor CRT</h3>
 
 O monitor utilizado no projeto foi o DELL M782p, um modelo CRT. Esse tipo de monitor utiliza um tubo de raios catódicos (CRT) para exibir imagens. O DELL M782p possui uma tela de visualização de 17 polegadas e uma resolução máxima de 1280x1024 pixels. Ele oferece uma interface VGA para conexão com o computador ou placa de desenvolvimento. O monitor CRT é conhecido por sua reprodução de cores vibrantes e tempos de resposta rápidos, sendo uma escolha adequada para projetos que exigem interação em tempo real, como jogos e simulações.
+
+<p align="center">
+  <img src="Images/Monitor.jpg" width = "400" />
+</p>
+<p align="center"><strong>Monitor CRT DELL</strong></p>
 
 <h3> Linguagem C</h3>
 
